@@ -141,13 +141,13 @@
   width: 35%;
   gap: 22px;
   padding: 10px;
-  border: 1px solid darkgreen;
+  border: var(--password-form-border);
   border-radius: 8px;
   /* padding: 10px; */
 }
 
 .password-form h3 {
-  color: darkgreen;
+  color: var(--password-form-h3);
 }
 .password-form-label-and-input-container {
   width: 75%;
@@ -158,7 +158,7 @@
 
 .password-form-label-and-input-container label {
   font-weight: bold;
-  color: darkgreen;
+  color: var(--password-form-label);
 }
 
 .login-error-message {
@@ -200,7 +200,7 @@
   height: 25px;
   width: 100px;
   border: none;
-  background-color: #b0f863;
+  background-color: var(--background-color-close-button);
   border-radius: 4px;
   font-size: 16px;
 }
@@ -289,17 +289,17 @@
 }
 .newest-reflections-header {
   background-color: var(--main-background);
-  border-bottom: 2px solid green;
+  border-bottom: var(--reflection-header-border-bottom);
   padding-bottom: 5px;
   width: 319px;
-  color: green;
+  color: var(--reflections-header);
 }
 
 .home-padlock-div {
   width: 35px;
 }
 .home-padlock {
-  color: green;
+  color: var(--home-padlock);
 }
 
 .home-public-or-private-button {
@@ -352,7 +352,7 @@
   height: 60px;
   width: 60px;
   border-radius: 8px;
-  background-color: #d7f863;
+  background-color: var(--feeling-inspired-icon);
 }
 
 .feeling-inspired-h2 {
@@ -362,7 +362,7 @@
 .feeling-inspired-paragraph {
   margin-top: 15px;
   font-size: large;
-  color: #6d9c07;
+  color: var(----feeling-inspired-paragraph);
 }
 
 .new-entry-page-link {

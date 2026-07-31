@@ -9,7 +9,20 @@
   --new-entry-button-hover: rgba(0, 100, 0, 0.502);
   --profile-logged-in: green;
   --logged-in-paragraph: darkgreen;
+  --sign-in-hover: #9bfa8f57;
+  --sign-out-hover: #9bfa8f57;
   --main-background: #f9fee7;
+  --home-padlock: green;
+  --reflections-header: green;
+  --reflection-header-border-bottom: 2px solid green;
+  /* grid */
+  --background-color-one: #d8f863d4;
+  --background-color-two: #d8f86374;
+  --reflection-date-heading: darkgreen;
+  --reflection-paragraph: darkgreen;
+  --feeling-inspired-icon: #d7f863;
+  --feeling-inspired-paragraph: #6d9c07;
+
   --footer-background-color: lightgreen;
   --footer-height: 100px;
   --footer-padding-left: 25px;
@@ -17,10 +30,18 @@
   --footer-p-font-size: 14px;
 
   --footer-nav-a-font-size: 14px;
+  /* password form */
+  --password-form-border: 1px solid darkgreen;
+  --password-form-h3: darkgreen;
+  --password-form-label: darkgreen;
+  --background-color-close-button: #b0f863;
   /* index and vault */
   --header-paragraph-color: grey;
   /* newentry */
   --placeholder-color: lightgrey;
+}
+
+[data-theme="light"] {
 }
 
 [data-theme="dark"] {
@@ -33,8 +54,29 @@
   --new-entry-button-hover: rgba(0, 82, 100, 0.502);
   --profile-logged-in: blue;
   --logged-in-paragraph: darkblue;
+  --sign-in-hover: #8f93fa57;
+  --sign-out-hover: #8f94fa57;
+
   --main-background: #e7fbfe;
+  --home-padlock: blue;
+  --reflections-header: blue;
+  --reflection-header-border-bottom: 2px solid blue;
+  /* grid */
+  --background-color-one: #63ddf8d4;
+  --background-color-two: #63cef874;
+  --reflection-date-heading: darkblue;
+  --reflection-paragraph: darkblue;
+
+  --feeling-inspired-icon: #63ddf8;
+  --feeling-inspired-paragraph: #076a9c;
+  --feeling-inspired-icon: #63d3f8;
   --footer-background-color: lightblue;
+
+  /* password form */
+  --password-form-border: 1px solid darkblue;
+  --password-form-h3: darkblue;
+  --password-form-label: darkblue;
+  --background-color-close-button: #63e9f8;
   /* index and vault */
   --header-paragraph-color: grey;
   /* newentry */

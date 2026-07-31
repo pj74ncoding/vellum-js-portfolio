@@ -30,7 +30,7 @@
 }
 
 .index-date-heading {
-  color: darkgreen;
+  color: var(--reflection-date-heading);
   font-weight: bold;
 }
 
@@ -38,7 +38,7 @@
   margin-top: 5px;
 }
 .index-reflection-paragraph {
-  color: darkgreen;
+  color: var(--reflection-paragraph);
 }
 /* new entry created tags section*/
 .created-tag-and-close-button-container {

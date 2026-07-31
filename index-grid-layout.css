@@ -26,34 +26,35 @@
 
 .card-section > div:nth-of-type(1) {
   grid-column: 1 / span 2;
-  background-color: #d8f863d4;
+  background-color: var(--background-color-one);
+
   box-shadow: -4px 4px 20px #888888;
   font-size: large;
 }
 
 .card-section > div:nth-of-type(2) {
   grid-column: 3 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section > div:nth-of-type(3) {
   grid-column: 1 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section > div:nth-of-type(4) {
   grid-column: 2 / span 2;
-  background-color: #d7f863;
+  background-color: var(--background-color-one);
 }
 
 .card-section > div:nth-of-type(5) {
   grid-column: 1 / span 2;
-  background-color: #d7f863;
+  background-color: var(--background-color-one);
 }
 
 .card-section > div:nth-of-type(6) {
   grid-column: 3 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 .card-section > div:nth-of-type(1) > div {
   -webkit-line-clamp: 4;
@@ -126,7 +127,7 @@
 
 .card-section-one > div:nth-of-type(1) {
   grid-column: 1 / span 3;
-  background-color: #d8f863d4;
+  background-color: var(--background-color-one);
   box-shadow: 0 4px 12px #888888;
   font-size: large;
 }
@@ -156,19 +157,19 @@
 
 .card-section-two > div:nth-of-type(1) {
   grid-column: 1 / span 2;
-  background-color: #d8f863d4;
+  background-color: var(--background-color-one);
   box-shadow: 0 4px 12px #888888;
   font-size: large;
 }
 
 .card-section-two > div:nth-of-type(2) {
   grid-column: 3 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section-two > div:nth-of-type(3) {
   grid-column: 1 / span 3;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section-two > div:nth-of-type(1) > div {
@@ -210,29 +211,29 @@
 
 .card-section-three > div:nth-of-type(1) {
   grid-column: 1 / span 2;
-  background-color: #d8f863d4;
+  background-color: var(--background-color-one);
   box-shadow: 0 4px 12px #888888;
   font-size: large;
 }
 
 .card-section-three > div:nth-of-type(2) {
   grid-column: 3 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section-three > div:nth-of-type(3) {
   grid-column: 1 / span 1;
-  background-color: #d8f86374;
+  background-color: var(--background-color-two);
 }
 
 .card-section-three > div:nth-of-type(4) {
   grid-column: 2 / span 2;
-  background-color: #d7f863;
+  background-color: var(--background-color-one);
 }
 
 .card-section-three > div:nth-of-type(5) {
   grid-column: 1 / span 3;
-  background-color: #d7f863;
+  background-color: var(--background-color-one);
 }
 
 .card-section-three > div:nth-of-type(1) > div {

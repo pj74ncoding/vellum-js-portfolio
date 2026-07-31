@@ -122,6 +122,7 @@
 .not-displayed {
   display: none;
 }
+
 .vault-is-displayed {
   visibility: hidden;
 }
@@ -392,7 +393,9 @@
   flex-direction: column;
   gap: 20px;
 }
-
+.not-displayed-entry-section {
+  display: none;
+}
 .main-section-container {
   width: 100%;
   height: auto;

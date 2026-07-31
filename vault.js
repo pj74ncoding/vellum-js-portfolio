@@ -132,17 +132,19 @@ vaultLoginConfirmButton.addEventListener("click", () => {
     vaultLogOutButton.classList.remove("not-displayed");
     localStorage.setItem("user-logged-in", "true");
     vaultLoginErrorMessage.classList.add("vault-is-displayed");
+    cardSection.classList.remove("not-displayed-entry-section");
     publicOrPrivate();
   } else {
     vaultLoginErrorMessage.classList.remove("vault-is-displayed");
   }
 });
-
+const cardSection = document.getElementById("my-vault-entry-section");
 vaultLogInButton.addEventListener("click", () => {
   const userLoggedIn = localStorage.getItem("user-logged-in");
   if (userLoggedIn == "false") {
     vaultLoginSection.classList.remove("not-displayed");
     vaultProfileMenu.classList.add("profile-menu-displayed");
+    cardSection.classList.add("not-displayed-entry-section");
   }
 });
 
@@ -152,6 +154,7 @@ vaultLogOutButton.addEventListener("click", () => {
   vaultLoggedIn.textContent = "Sign In";
   vaultLogInButton.classList.remove("not-displayed");
   vaultLogOutButton.classList.add("not-displayed");
+  cardSection.classList.remove("not-displayed-entry-section");
   secondaryDisplaySignInMessage = false;
   publicOrPrivate();
   // isPublicVellum == true;
@@ -162,10 +165,13 @@ function closeLogin() {
   vaultLoginErrorMessage.classList.add("vault-is-displayed");
   const loginUsername = document.getElementById("vault-username");
   const loginPassword = document.getElementById("vault-password");
+  cardSection.classList.remove("not-displayed-entry-section");
   loginUsername.value = "";
   loginPassword.value = "";
 }
-const cardSection = document.getElementById("my-vault-entry-section");
+
+// ----------------------------------------------------------------
+// const cardSection = document.getElementById("my-vault-entry-section");
 const vaultHeading = document.getElementById("vault-heading");
 const vaultHeader = document.getElementById("vault-your-reflections-header");
 vaultHeader.innerHTML = "Your Public Reflections:";
@@ -468,7 +474,6 @@ function publicOrPrivate() {
       // storedPrivateVellum ---------------------------------------------------
     } else if (isPublicVellum == false) {
       if (storedPrivateVellum.length <= 0) {
-        console.log("entered private test");
         vaultHeading.innerHTML = "My Private Vault";
         vaultHeader.innerHTML = "My Private Reflections:";
         vaultPadlock.classList.remove("fa-solid");
@@ -539,7 +544,7 @@ function publicOrPrivate() {
             );
             deleteVellumDiv.classList.add("vault-confirm-is-displayed");
             isPublicVellum = false;
-      
+
             // location.href = location.href; //reloads the page
             secondaryDisplaySignInMessage = false;
             publicOrPrivate();
@@ -734,7 +739,7 @@ function publicOrPrivate() {
       const storedPublicVellum = JSON.parse(
         localStorage.getItem("public-vellum-entries"),
       );
-      console.log("public-vellum-true");
+
       vaultHeading.innerHTML = "My Public Vault";
       publicOrPrivateButton.innerHTML = "Change To Private Reflections";
       vaultEmptyMessageContainer.classList.add(

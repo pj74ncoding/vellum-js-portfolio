@@ -425,12 +425,14 @@ profileMenu.addEventListener("mouseleave", () => {
     enteredProfileMenu = false;
   }, 400);
 });
-
+const cardSectionContainer = document.getElementById("card-section-container");
 logInButton.addEventListener("click", () => {
   const userLoggedIn = localStorage.getItem("user-logged-in");
   if (userLoggedIn == "false") {
     loginSection.classList.remove("not-displayed");
     profileMenu.classList.add("profile-menu-displayed");
+    cardSectionContainer.classList.add("not-displayed");
+    feelingInspiredSection.classList.add("not-displayed");
   }
 });
 
@@ -467,6 +469,8 @@ loginConfirmButton.addEventListener("click", () => {
     loggedIn.textContent = "Foxes1888";
     logInButton.classList.add("not-displayed");
     logOutButton.classList.remove("not-displayed");
+    cardSectionContainer.classList.remove("not-displayed");
+    feelingInspiredSection.classList.remove("not-displayed");
   } else {
     loginErrorMessage.classList.remove("vault-is-displayed");
   }
@@ -477,6 +481,8 @@ function closeLogin() {
   loginErrorMessage.classList.add("vault-is-displayed");
   const loginUsername = document.getElementById("vault-username");
   const loginPassword = document.getElementById("vault-password");
+  cardSectionContainer.classList.remove("not-displayed");
+  feelingInspiredSection.classList.remove("not-displayed");
   loginUsername.value = "";
   loginPassword.value = "";
 }

@@ -63,13 +63,13 @@
   font-weight: 400;
 }
 .sign-in:hover {
-  background-color: #bcfa8f57;
+  background-color: var(--sign-in-hover);
   cursor: pointer;
   transition: all 500ms ease-in-out;
 }
 
 .sign-out:hover {
-  background-color: #bcfa8f57;
+  background-color: var(--sign-out-hover);
   cursor: pointer;
   transition: all 500ms ease-in-out;
 }
