@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6644687a4d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="newentry.css" />
+    <link rel="stylesheet" href="profile-in-nav.css" />
+    <link rel="stylesheet" href="root-for-var.css" />
+    <link rel="stylesheet" href="created-elements.css" />
+    <title>New Entry</title>
+  </head>
+  <body>
+    <nav class="new-entry-nav">
+      <a class="home-page-link" href="index.html"
+        ><h2 class="title">The Digital Vellum</h2></a
+      >
+
+      <div class="pages-and-icon-container">
+        <a class="vault-link" href="vault.html"
+          ><p class="my-vault">My Vault</p></a
+        >
+
+        <p class="new-entry">New Entry</p>
+
+        <div id="new-entry-profile-container" class="profile-icon-container">
+          <div class="new-entry-profile-icon-div">
+            <i
+              id="new-entry-profile-icon"
+              class="fa-solid fa-circle-user fa-xl profile-icon"
+            ></i>
+          </div>
+        </div>
+
+        &nbsp;
+        <div class="logged-in-paragraph-container">
+          <p id="new-entry-logged-in"></p>
+        </div>
+      </div>
+
+      <!-- profile menu -->
+      <div class="profile-menu profile-menu-displayed">
+        <button id="new-entry-log-in-button" class="sign-in">Sign In</button>
+
+        <button id="new-entry-log-out-button" class="sign-out">Sign Out</button>
+      </div>
+    </nav>
+    <!-- password input-section -->
+
+    <section
+      id="vault-login-section"
+      class="password-input-section-absolute password-input-section-absolute-displayed"
+    >
+      <form class="password-form" action="">
+        <h3>Please Enter Your Login Details!!</h3>
+        <div class="password-form-label-and-input-container">
+          <label for="username">Username: </label>
+          <input
+            id="vault-username"
+            type="text"
+            name="username"
+            placeholder="username"
+          />
+          <p>( leicester )</p>
+        </div>
+        <div class="password-form-label-and-input-container">
+          <label for="password">Password: </label>
+          <input
+            id="vault-password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+          <p>( filbert16 )</p>
+        </div>
+
+        <button
+          id="vault-login-confirm-button"
+          class="vault-login-confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+        <p
+          id="vault-login-error-message"
+          class="login-error-message vault-is-displayed"
+        >
+          Your Login Details Do Not Match!!!!
+        </p>
+      </form>
+      <br />
+      <div class="password-form-close-button-container">
+        <button
+          id="vault-login-close-button"
+          class="vault-login-close-button"
+          onclick="closeLogin()"
+        >
+          X Close
+        </button>
+      </div>
+    </section>
+
+    <!-- main-section -->
+    <section class="main-section-container">
+      <form class="newentry-main-section">
+        <div class="left-section">
+          <section class="depth-insight">
+            <h3>Depth Insight</h3>
+            <p>
+              Write without judgement. The vellum remembers only what you choose
+              to ink.
+            </p>
+          </section>
+        </div>
+
+        <div class="middle-section">
+          <header class="form-entry-header">
+            <p id="form-date"></p>
+            <input
+              id="form-header-input"
+              class="header-input"
+              type="text"
+              placeholder="Untitled Reflection"
+            />
+          </header>
+
+          <!-- tag section -->
+
+          <section class="main-create-tag-section">
+            <div class="add-tags-header-and-button-container">
+              <h2 class="add-tags-header">Add Tags ( 3 max )</h2>
+
+              <div
+                id="create-tag-newentry-header-button"
+                class="create-tag-newentry-header-button"
+                onclick="createTag()"
+              >
+                <i class="fa-solid fa-plus"></i>
+                <p class="create-tag-button">Create Tag</p>
+              </div>
+            </div>
+
+            <!-- create tag error message -->
+            <div id="create-tag-message-container">
+              <div
+                id="create-tag-message-div"
+                class="create-tag-error-message"
+              ></div>
+            </div>
+
+            <!-- created tag display section -->
+            <section
+              id="created-tag-section"
+              class="created-tag-section"
+            ></section>
+          </section>
+
+          <!-- input area for tag section -->
+
+          <section
+            id="input-section-for-tag"
+            class="input-section-for-tag input-section-for-tag-display"
+          >
+            <div class="heading-and-close-button-container">
+              <h3>Create Your Tag ( 3 max )</h3>
+              <button id="input-close-button" class="input-close-button">
+                <i class="fa-solid fa-x fa-lg"></i>
+              </button>
+            </div>
+
+            <div class="input-emoji-and-input-title-container">
+              <label for="input-emoji">Emoji (max 1) : </label>
+              <input
+                class="input-emoji"
+                id="input-emoji"
+                name="input-emoji"
+                input="text"
+                placeholder="🎨"
+              />
+              <label for="input-title">Title ( max 10 characters ) : </label>
+              <input
+                class="input-title"
+                id="input-title"
+                name="input-title"
+                input="text"
+                placeholder="Creative"
+                maxlength="10"
+              />
+            </div>
+            <button
+              class="input-add-tag-button"
+              type="button"
+              onclick="addCreatedTag()"
+            >
+              <i class="fa-solid fa-plus"></i>&nbsp; Add Tag
+            </button>
+          </section>
+          <div class="reflection-input-container">
+            <!-- animation -->
+            <div
+              id="animation-container"
+              class="animation-main-container displayed"
+            >
+              <div id="icon-container" class="icon-container container-basics">
+                <img
+                  id="page-icon"
+                  class="page"
+                  src="page.png"
+                  alt="a page icon"
+                />
+                <img
+                  id="open-book"
+                  class="open-book"
+                  src="open-book-2.png"
+                  alt="An open book icon"
+                />
+                <img
+                  id="closed-book"
+                  class="closed-book displayed"
+                  src="closed-book.png"
+                  alt="A closed book icon"
+                />
+                <h3 id="success-message" class="displayed success-message">
+                  Success Your Entry Has Been Added!!
+                </h3>
+              </div>
+            </div>
+
+            <!-- text area -->
+            <textarea
+              id="text-area"
+              class="reflection-input"
+              type="text"
+              maxlength="2000"
+              placeholder="Begin your reflection..."
+            ></textarea>
+            <div class="input-counter-container">
+              <p id="input-counter">0&nbsp;</p>
+              <p>&nbsp;/ 2000</p>
+            </div>
+          </div>
+
+          <!-- save-entry-error message -->
+          <div id="error-message-container" class="save-entry-error-message">
+            <div id="error-message-div" class="error-message"></div>
+          </div>
+        </div>
+
+        <!-- right-section -->
+        <div class="right-section">
+          <div class="right-section-image"></div>
+        </div>
+      </form>
+
+      <!-- save entry section -->
+      <section class="save-entry-section">
+        <div class="newentry-paragraph-icon-container">
+          <div class="button-and-icon">
+            <i class="fa-solid fa-image fa-lg"></i>
+
+            <button id="insert-memory-button" class="insert-memory-button">
+              Insert Memory
+            </button>
+          </div>
+          <div class="button-and-icon">
+            <i id="padlock"></i>
+
+            <button id="private-public-button" class="private-button"></button>
+          </div>
+        </div>
+        <div class="newentry-button-container">
+          <div class="button-and-icon">
+            <i class="fa-solid fa-trash fa-lg"></i>
+            <button
+              id="discard"
+              class="discard-button"
+              onclick="discardReflection()"
+            >
+              Discard
+            </button>
+          </div>
+          <button class="save-entry-button">Save Entry</button>
+          <div class="my-vault-link-container">
+            <a class="my-vault-link" href="vault.html"><p>My Vault</p></a>
+            <i class="fa-solid fa-arrow-right-long my-vault-link-icon"></i>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <div class="main-section-bottom">
+      <section class="insert-memory-discard-message-container">
+        <div
+          id="insert-memory-message"
+          class="display-memory-message insert-memory-message"
+        >
+          <p>Unavailable!!</p>
+        </div>
+        <div class="new-entry-private-error-message-container">
+          <p
+            id="private-error-message"
+            class="new-entry-private-error-message vault-is-displayed"
+          >
+            Sign in to create private reflections!!
+          </p>
+        </div>
+        <!-- discard confirm -->
+        <div
+          id="discard-confirm-message"
+          class="discard-confirm hide-confirm-message"
+        >
+          <p>Are You Sure!!</p>
+
+          <div class="discard-confirm-button-container">
+            <button id="yesbutton" class="yes-button">Yes</button>
+            <button id="nobutton" class="no-button">No</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-newentry-container">
+        <p>&copy; 2026 The Digital Vellum. Designed for reflection.</p>
+        <nav class="footer-newentry-nav">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Archive</a>
+        </nav>
+      </div>
+    </footer>
+    <br /><br />
+    <script src="newentry.js"></script>
+  </body>
+</html>

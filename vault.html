@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6644687a4d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="vault.css" />
+    <link rel="stylesheet" href="profile-in-nav.css" />
+    <link rel="stylesheet" href="root-for-var.css" />
+    <link rel="stylesheet" href="created-elements.css" />
+
+    <title>Vault</title>
+  </head>
+  <body>
+    <nav class="new-entry-nav">
+      <a class="home-page-link" href="index.html"
+        ><h2 class="title">The Digital Vellum</h2></a
+      >
+      <div class="page-container">
+        <a href="#">Journal</a>
+        <a href="#" class="vault-page">My Vault</a>
+        <a href="#">Collection</a>
+        <a href="#">Settings</a>
+      </div>
+      <div class="button-and-icon-container">
+        <a class="new-entry-link" href="newentry.html"
+          ><button class="new-entry-button">New Entry</button></a
+        >
+        <div id="vault-profile-container" class="profile-icon-container">
+          <div class="new-entry-profile-icon-div">
+            <i
+              id="vault-profile-icon"
+              class="fa-solid fa-circle-user fa-xl profile-icon"
+            ></i>
+          </div>
+        </div>
+        &nbsp;
+        <div class="logged-in-paragraph-container">
+          <p id="vault-logged-in"></p>
+        </div>
+      </div>
+      <!-- profile menu -->
+      <div class="profile-menu profile-menu-displayed">
+        <div class="log-in-div">
+          <button id="vault-log-in-button" class="sign-in">Sign In</button>
+        </div>
+        <div class="log-out-div">
+          <button id="vault-log-out-button" class="sign-out">Sign Out</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="main-body-section">
+      <!-- left-section -->
+      <div class="left-section">
+        <div class="left-section-image"></div>
+      </div>
+      <main class="main-section-container">
+        <!-- password input-section -->
+
+        <section
+          id="vault-login-section"
+          class="password-input-section-absolute not-displayed"
+        >
+          <form class="password-form" action="">
+            <h3>Please Enter Your Login Details!!</h3>
+            <div class="password-form-label-and-input-container">
+              <label for="username">Username: </label>
+              <input
+                id="vault-username"
+                type="text"
+                name="username"
+                placeholder="username"
+              />
+              <p>( leicester )</p>
+            </div>
+            <div class="password-form-label-and-input-container">
+              <label for="password">Password: </label>
+              <input
+                id="vault-password"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+              <p>( filbert16 )</p>
+            </div>
+
+            <button
+              id="vault-login-confirm-button"
+              class="vault-login-confirm-button"
+              type="button"
+            >
+              Confirm
+            </button>
+            <p
+              id="vault-login-error-message"
+              class="login-error-message vault-is-displayed"
+            >
+              Your Login Details Do Not Match!!!!
+            </p>
+          </form>
+          <br />
+          <div class="password-form-close-button-container">
+            <button
+              id="vault-login-close-button"
+              class="vault-login-close-button"
+              onclick="closeLogin()"
+            >
+              X Close
+            </button>
+          </div>
+        </section>
+
+        <!-- header -->
+
+        <header class="vault-header-container">
+          <div class="vault-private-error-message-container">
+            <p
+              id="vault-private-error-message"
+              class="vault-private-error-message vault-is-displayed"
+            >
+              Sign in to see your private vellum!!
+            </p>
+          </div>
+          <div class="vault-header">
+            <div class="vault-header-and-button-container">
+              <h1 id="vault-heading" class="my-vault-h1"></h1>
+              <button
+                id="public-or-private-button"
+                class="public-or-private-button"
+                onclick="publicOrPrivate()"
+              ></button>
+            </div>
+            <div class="header-paragraph">
+              <p>
+                A sanctuary for the whispers of the past, preserved in ink and
+              </p>
+              <p>
+                digital shadow. Every word a corner stone of who you were, and
+              </p>
+              <p>who you are becoming.</p>
+            </div>
+          </div>
+        </header>
+
+        <div class="vault-your-reflections-header-container">
+          <div class="padlock-and-heading-container">
+            <div class="vault-padlock-div">
+              <i id="vault-padlock" class="padlock-open"></i>
+            </div>
+            <h3
+              id="vault-your-reflections-header"
+              class="vault-your-reflections-header"
+            ></h3>
+          </div>
+        </div>
+
+        <!-- vault empty message -->
+
+        <section
+          id="vault-empty-message-container"
+          class="vault-empty-container vault-empty-container-not-displayed"
+        >
+          <div class="vault-empty-section">
+            <div class="vault-empty-icon">
+              <i class="fa-solid fa-file-pen fa-2xl"></i>
+            </div>
+            <h2 id="empty-vault-heading" class="vault-empty-h2"></h2>
+            <p class="vault-empty-paragraph">
+              Your vellum is waiting for its first entry.
+            </p>
+            <a class="new-entry-page-link" href="newentry.html"
+              >Start writing now</a
+            >
+          </div>
+        </section>
+
+        <!-- vault entry section -->
+        <section
+          class="vault-entry-section"
+          id="my-vault-entry-section"
+        ></section>
+      </main>
+      <div class="right-section"></div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="footer-vault-container">
+        <p>&copy; 2026 The Digital Vellum. Designed for reflection.</p>
+        <nav class="footer-vault-nav">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Archive</a>
+        </nav>
+      </div>
+    </footer>
+    <br /><br />
+    <script src="vault.js"></script>
+  </body>
+</html>

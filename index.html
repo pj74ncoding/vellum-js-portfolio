@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6644687a4d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="profile-in-nav.css" />
+    <link rel="stylesheet" href="root-for-var.css" />
+    <link rel="stylesheet" href="created-elements.css" />
+    <link rel="stylesheet" href="index-grid-layout.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- <body data-theme="dark"> -->
+    <nav class="new-entry-nav">
+      <a class="home-page-link" href="index.html"
+        ><h2 class="title">The Digital Vellum</h2></a
+      >
+
+      <div class="button-and-icon-container">
+        <a class="vault-page-link" href="vault.html"
+          ><p class="my-vault">My Vault</p></a
+        >
+        <a class="new-entry-page-button-link" href="newentry.html"
+          ><button class="new-entry-button">New Entry</button></a
+        >
+        <div id="profile-icon-container" class="profile-icon-container">
+          <div id="profile-icon-div" class="new-entry-profile-icon-div">
+            <i
+              id="profile-icon"
+              class="fa-solid fa-circle-user fa-xl profile-icon"
+            ></i>
+          </div>
+        </div>
+        &nbsp;
+        <div class="logged-in-paragraph-container">
+          <p id="logged-in" style="font-size: 15px"></p>
+        </div>
+      </div>
+      <!-- profile menu -->
+      <div class="profile-menu profile-menu-displayed">
+        <button id="log-in-button" class="sign-in">Sign In</button>
+
+        <button id="log-out-button" class="sign-out">Sign Out</button>
+      </div>
+    </nav>
+
+    <!-- password input-section -->
+    <section
+      id="vault-login-section"
+      class="password-input-section-absolute not-displayed"
+    >
+      <form class="password-form" action="">
+        <h3>Please Enter Your Login Details!!</h3>
+        <div class="password-form-label-and-input-container">
+          <label for="username">Username: </label>
+          <input
+            id="vault-username"
+            type="text"
+            name="username"
+            placeholder="username"
+          />
+          <p>( leicester )</p>
+        </div>
+        <div class="password-form-label-and-input-container">
+          <label for="password">Password: </label>
+          <input
+            id="vault-password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+          <p>( filbert16 )</p>
+        </div>
+
+        <button
+          id="vault-login-confirm-button"
+          class="vault-login-confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+        <p
+          id="vault-login-error-message"
+          class="login-error-message vault-is-displayed"
+        >
+          Your Login Details Do Not Match!!!!
+        </p>
+      </form>
+      <br />
+      <div class="password-form-close-button-container">
+        <button
+          id="vault-login-close-button"
+          class="vault-login-close-button"
+          onclick="closeLogin()"
+        >
+          X Close
+        </button>
+      </div>
+    </section>
+
+    <!-- main body section -->
+    <section class="main-body-section">
+      <div class="left-section"></div>
+      <main>
+        <!-- header -->
+        <header class="daily-reflections-header-container">
+          <div class="private-error-message-container">
+            <p
+              id="private-error-message"
+              class="private-error-message vault-is-displayed"
+            >
+              Sign in to see your private reflections!!
+            </p>
+          </div>
+          <div class="vault-header">
+            <div class="vault-header-and-button-container">
+              <h1 class="daily-reflections-h1">Daily Reflections</h1>
+              <button
+                id="home-public-or-private-button"
+                class="home-public-or-private-button"
+                onclick="homePublicOrPrivate()"
+              ></button>
+            </div>
+            <div class="header-paragraph">
+              <p>
+                A sanctuary for your thoughts. Captured in the quiet moments
+              </p>
+              <p>between the noise of the world.</p>
+            </div>
+          </div>
+        </header>
+
+        <div
+          id="your-newest-reflections-header-container"
+          class="your-newest-reflections-header-container"
+        >
+          <div class="home-padlock-and-heading-container">
+            <div class="home-padlock-div">
+              <i id="home-padlock" class="home-padlock"></i>
+            </div>
+            <h3
+              id="newest-reflections-header"
+              class="newest-reflections-header"
+            ></h3>
+          </div>
+        </div>
+        <!-- card-section -->
+        <!-- card-section css is in index-grid-layout.css -->
+        <section class="card-section-container">
+          <div id="vellum-card-section" class="card-section"></div>
+        </section>
+        <!-- feeling inspired section -->
+        <section class="feeling-inspired-container">
+          <div class="feeling-inspired-section">
+            <div class="feeling-inspired-icon">
+              <i class="fa-solid fa-file-pen fa-2xl"></i>
+            </div>
+            <h2 class="feeling-inspired-h2">Feeling inspired?</h2>
+            <p class="feeling-inspired-paragraph">
+              Your vellum is waiting for its next entry.
+            </p>
+            <a class="new-entry-page-link" href="newentry.html"
+              >Start writing now</a
+            >
+          </div>
+        </section>
+      </main>
+      <div class="right-section"></div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="footer-home-container">
+        <p>&copy; 2026 My ITOL Vault. Designed for reflection.</p>
+        <nav class="footer-home-nav">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Archive</a>
+        </nav>
+      </div>
+    </footer>
+    <br /><br />
+    <script src="index.js"></script>
+  </body>
+</html>

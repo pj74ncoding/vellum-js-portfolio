@@ -1,0 +1,434 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-VariableFont_wght.woff2");
+}
+/* navigation */
+.new-entry-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding-left: var(--nav-padding-left);
+  padding-right: var(--nav-padding-right);
+  background: var(--nav-background);
+  box-shadow: 4px 4px 8px grey;
+  position: relative;
+  z-index: 1;
+}
+
+.home-page-link {
+  text-decoration: none;
+}
+.title {
+  color: var(--nav-title-color);
+  transition: all 500ms ease-in-out;
+}
+.title:hover {
+  transform: scale(1.03);
+  transition: all 500ms ease-in-out;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.page-container a {
+  text-decoration: none;
+  color: black;
+}
+.vault-page {
+  border-bottom: 2px solid black;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+.button-and-icon-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  height: 40px;
+}
+
+.new-entry-link {
+  text-decoration: none;
+}
+.new-entry-button {
+  font-size: small;
+  border-radius: 6px;
+  height: 30px;
+  width: 95px;
+  border: none;
+  background-color: darkgreen;
+  color: white;
+  box-shadow: 0 4px 6px #888888;
+  transition: all 250ms ease-in-out;
+  margin-left: 15px;
+}
+
+.new-entry-button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 100, 0, 0.502);
+  transition: all 250ms ease-in-out;
+  border: 1px solid black;
+}
+
+.vault-profile-icon-logged-in {
+  color: green;
+}
+
+.profile-icon {
+  transition: all 200ms ease-in-out;
+}
+.profile-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+
+.logged-in-paragraph-container {
+  width: 80px;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--logged-in-paragraph);
+  font-weight: 500;
+}
+.pages-and-icon-container a {
+  text-decoration: none;
+  color: black;
+}
+
+/* password-form-absolute */
+
+.password-input-section-absolute {
+  width: 70%;
+  height: 94vh;
+  background-color: var(--main-background);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-displayed {
+  display: none;
+}
+.vault-is-displayed {
+  visibility: hidden;
+}
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 50%;
+  gap: 22px;
+  padding: 10px;
+  border: 1px solid darkgreen;
+  border-radius: 8px;
+  /* padding: 10px; */
+}
+
+.password-form h3 {
+  color: darkgreen;
+}
+.password-form-label-and-input-container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.password-form-label-and-input-container label {
+  font-weight: bold;
+  color: darkgreen;
+}
+
+.login-error-message {
+  color: darkred;
+  font-weight: bold;
+  font-style: italic;
+}
+.password-form-label-and-input-container input {
+  width: 125px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.vault-login-confirm-button {
+  width: 30%;
+  height: 30px;
+  font-size: 16px;
+  background: var(--nav-background);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  transition: all 500ms ease-in-out;
+}
+
+.vault-login-confirm-button:hover,
+.vault-login-close-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms ease-in-out;
+}
+
+.password-form-close-button-container {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+}
+.vault-login-close-button {
+  height: 25px;
+  width: 100px;
+  border: none;
+  background-color: #b0f863;
+  border-radius: 4px;
+  font-size: 16px;
+}
+/* main-body-section */
+
+.main-body-section {
+  display: grid;
+  grid-template-columns: 350px auto 350px;
+  min-height: 730px;
+  padding-bottom: 100px;
+  background-color: var(--main-background);
+}
+/* left-section */
+
+.left-section {
+  width: 100%;
+  height: auto;
+  background-color: var(--main-background);
+  padding-top: 80px;
+  padding-left: var(--nav-padding-left);
+}
+.left-section-image {
+  background-image: url("images/richard-hedrick-PizEUj1IXY8-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 3px grey;
+}
+/* .left-section, */
+.right-section {
+  background-color: var(--main-background);
+}
+/* header */
+.vault-header-container {
+  background-color: var(--main-background);
+  width: 100%;
+  height: 280px;
+  padding-top: 50px;
+}
+
+.vault-private-error-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.vault-private-error-message {
+  border: 1px solid darkred;
+  background-color: white;
+  font-style: italic;
+  color: darkred;
+  box-shadow: 0px 4px 5px grey;
+  border-radius: 6px;
+  padding: 6px 20px;
+  font-size: 14px;
+}
+.vault-header-and-button-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.my-vault-h1 {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.public-or-private-button {
+  transition: all 500ms;
+  border-radius: 8px;
+
+  background: var(--nav-background);
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  width: 250px;
+  color: white;
+}
+
+.public-or-private-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms;
+}
+
+.header-paragraph {
+  margin-top: 20px;
+  line-height: 1.5;
+  color: var(--header-paragraph-color);
+}
+
+.vault-your-reflections-header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.padlock-and-heading-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 1px;
+}
+
+.vault-padlock-div {
+  width: 30px;
+}
+.padlock-open {
+  color: green;
+}
+.vault-your-reflections-header {
+  background-color: var(--main-background);
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+  width: 240px;
+  color: green;
+}
+
+.vault-entry-section {
+  margin-top: 30px;
+}
+/* if vault is empty section */
+
+.vault-empty-container {
+  width: 100%;
+  background-color: var(--main-background);
+  height: auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.vault-empty-container-not-displayed {
+  display: none;
+}
+
+.vault-empty-section {
+  width: 100%;
+  border: 2px dashed lightgrey;
+  border-radius: 8px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.vault-empty-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  background-color: #d7f863;
+}
+
+.vault-empty-h2 {
+  margin-top: 25px;
+}
+
+.vault-empty-paragraph {
+  margin-top: 15px;
+  font-size: large;
+  color: #6d9c07;
+}
+
+.new-entry-page-link {
+  text-decoration: none;
+}
+.new-entry-page-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  border-bottom: 2px solid black;
+  padding-bottom: 3px;
+  margin-top: 40px;
+}
+
+.new-entry-page-link:hover {
+  cursor: pointer;
+}
+
+/* vault entry section */
+.vault-entry-section {
+  width: 100%;
+  height: auto;
+  background-color: var(--main-background);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-section-container {
+  width: 100%;
+  height: auto;
+  background-color: var(--main-background);
+}
+
+/* footer */
+.footer-vault-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--footer-height);
+  background-color: var(--footer-background-color);
+  padding-left: var(--footer-padding-left);
+  padding-right: var(--footer-padding-right);
+}
+
+.footer-vault-container p {
+  color: var(--dark-text-color);
+}
+.footer-vault-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+  gap: 20px;
+}
+
+.footer-vault-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: var(--footer-nav-a-font-size);
+  color: var(--dark-text-color);
+}
+
+.footer-vault-nav a:hover {
+  cursor: pointer;
+  border-bottom: 2px solid darkgreen;
+}

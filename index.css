@@ -1,0 +1,416 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-VariableFont_wght.woff2");
+}
+
+.new-entry-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding-left: var(--nav-padding-left);
+  padding-right: var(--nav-padding-right);
+  background: var(--nav-background);
+  box-shadow: 4px 4px 8px grey;
+  position: relative;
+  z-index: 2;
+}
+
+.home-page-link {
+  text-decoration: none;
+}
+.title {
+  color: var(--nav-title-color);
+  transition: all 500ms ease-in-out;
+}
+.title:hover {
+  transform: scale(1.03);
+  transition: all 500ms ease-in-out;
+}
+
+.button-and-icon-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  height: 40px;
+}
+
+.nav-username-container {
+  display: flex;
+  justify-content: end;
+
+  padding-right: 35px;
+}
+
+.nav-username {
+  width: 150px;
+
+  display: flex;
+  justify-content: center;
+}
+.vault-page-link {
+  text-decoration: none;
+}
+.my-vault {
+  color: var(--dark-text-color);
+  transition: all 500ms ease-in-out;
+}
+
+.my-vault:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 2px;
+  transition: all 500ms ease-in-out;
+}
+.new-entry-page-button-link {
+  text-decoration: none;
+}
+
+.new-entry-button {
+  font-size: small;
+  border-radius: 6px;
+  height: 30px;
+  width: 95px;
+  border: none;
+  background-color: var(--dark-text-color);
+  color: white;
+  transition: all 250ms ease-in-out;
+  box-shadow: 0 4px 6px #888888;
+  margin-left: 15px;
+}
+
+.new-entry-button:hover {
+  cursor: pointer;
+  background-color: var(--new-entry-button-hover);
+  transition: all 250ms ease-in-out;
+  border: 1px solid black;
+}
+
+.profile-icon-logged-in {
+  color: var(--profile-logged-in);
+}
+.profile-icon {
+  transition: all 200ms ease-in-out;
+}
+.profile-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+.logged-in-paragraph-container {
+  width: 80px;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--logged-in-paragraph);
+  font-weight: 500;
+}
+
+/* password-form-absolute */
+
+.password-input-section-absolute {
+  width: 100%;
+  height: 95vh;
+  background-color: var(--main-background);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-displayed {
+  display: none;
+}
+
+.vault-is-displayed {
+  visibility: hidden;
+}
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 35%;
+  gap: 22px;
+  padding: 10px;
+  border: 1px solid darkgreen;
+  border-radius: 8px;
+  /* padding: 10px; */
+}
+
+.password-form h3 {
+  color: darkgreen;
+}
+.password-form-label-and-input-container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.password-form-label-and-input-container label {
+  font-weight: bold;
+  color: darkgreen;
+}
+
+.login-error-message {
+  color: darkred;
+  font-weight: bold;
+  font-style: italic;
+}
+.password-form-label-and-input-container input {
+  width: 125px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.vault-login-confirm-button {
+  width: 30%;
+  height: 30px;
+  font-size: 16px;
+  background: var(--nav-background);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  transition: all 500ms ease-in-out;
+}
+
+.vault-login-confirm-button:hover,
+.vault-login-close-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms ease-in-out;
+}
+
+.password-form-close-button-container {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+}
+.vault-login-close-button {
+  height: 25px;
+  width: 100px;
+  border: none;
+  background-color: #b0f863;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.main-body-section {
+  display: grid;
+  grid-template-columns: 350px auto 350px;
+  min-height: 730px;
+  background-color: var(--main-background);
+}
+
+.left-section,
+.right-section {
+  background-color: var(--main-background);
+}
+
+/* header */
+
+.daily-reflections-header-container {
+  width: 100%;
+  height: 260px;
+  padding-top: 50px;
+}
+
+.private-error-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.private-error-message {
+  border: 1px solid darkred;
+  background-color: white;
+  font-style: italic;
+  color: darkred;
+  box-shadow: 0px 4px 5px grey;
+  border-radius: 6px;
+  padding: 6px 20px;
+  font-size: 14px;
+}
+
+.vault-header-and-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.daily-reflections-h1 {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.home-public-or-private-button {
+  transition: all 500ms;
+  border-radius: 8px;
+  background: var(--nav-background);
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  width: 250px;
+  color: white;
+}
+
+.home-public-or-private-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms;
+}
+.header-paragraph {
+  margin-top: 20px;
+  line-height: 1.5;
+  color: var(--header-paragraph-color);
+}
+
+.your-newest-reflections-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.home-padlock-and-heading-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.newest-reflections-header {
+  background-color: var(--main-background);
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+  width: 319px;
+  color: green;
+}
+
+.home-padlock-div {
+  width: 35px;
+}
+.home-padlock {
+  color: green;
+}
+
+.home-public-or-private-button {
+  transition: all 500ms;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #bbfa8f;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.home-public-or-private-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms;
+}
+.vault-your-reflections-header {
+  background-color: var(--main-background);
+  border-bottom: 2px solid green;
+  padding-bottom: 5px;
+  width: 240px;
+  color: green;
+}
+/* card section and grid layout is in index-grid-layout.css */
+
+/* feeling inspired section */
+
+.feeling-inspired-container {
+  width: 100%;
+  background-color: var(--main-background);
+  height: 420px;
+}
+
+.feeling-inspired-section {
+  width: 100%;
+  border: 2px dashed lightgrey;
+  border-radius: 8px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.feeling-inspired-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  background-color: #d7f863;
+}
+
+.feeling-inspired-h2 {
+  margin-top: 25px;
+}
+
+.feeling-inspired-paragraph {
+  margin-top: 15px;
+  font-size: large;
+  color: #6d9c07;
+}
+
+.new-entry-page-link {
+  text-decoration: none;
+}
+.new-entry-page-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  border-bottom: 2px solid black;
+  padding-bottom: 3px;
+  margin-top: 40px;
+}
+
+.new-entry-page-link:hover {
+  cursor: pointer;
+}
+/* footer */
+.footer-home-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--footer-height);
+  background-color: var(--footer-background-color);
+  background-color: var(--footer-background-color);
+  padding-left: var(--footer-padding-left);
+  padding-right: var(--footer-padding-right);
+}
+.footer-home-container p {
+  color: var(--dark-text-color);
+}
+.footer-home-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+  gap: 20px;
+}
+
+.footer-home-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: var(--footer-nav-a-font-size);
+  color: var(--dark-text-color);
+}
+
+.footer-home-nav a:hover {
+  cursor: pointer;
+  border-bottom: 2px solid darkgreen;
+}

@@ -1,0 +1,279 @@
+/* card section */
+
+.card-section-container {
+  background-color: var(--main-background);
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+.card-section {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+.card-section-not-grid {
+  width: 100%;
+  height: auto;
+}
+.card-section > div {
+  height: 200px;
+  width: 100%;
+}
+
+.card-section > div:nth-of-type(1) {
+  grid-column: 1 / span 2;
+  background-color: #d8f863d4;
+  box-shadow: -4px 4px 20px #888888;
+  font-size: large;
+}
+
+.card-section > div:nth-of-type(2) {
+  grid-column: 3 / span 1;
+  background-color: #d8f86374;
+}
+
+.card-section > div:nth-of-type(3) {
+  grid-column: 1 / span 1;
+  background-color: #d8f86374;
+}
+
+.card-section > div:nth-of-type(4) {
+  grid-column: 2 / span 2;
+  background-color: #d7f863;
+}
+
+.card-section > div:nth-of-type(5) {
+  grid-column: 1 / span 2;
+  background-color: #d7f863;
+}
+
+.card-section > div:nth-of-type(6) {
+  grid-column: 3 / span 1;
+  background-color: #d8f86374;
+}
+.card-section > div:nth-of-type(1) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section > div:nth-of-type(1) > div > p {
+  font-size: medium;
+}
+
+.card-section > div:nth-of-type(2) > h2 {
+  font-size: large;
+}
+.card-section > div:nth-of-type(2) > p {
+  font-size: small;
+}
+
+.card-section > div:nth-of-type(3) > h2 {
+  font-size: large;
+}
+.card-section > div:nth-of-type(3) > p {
+  font-size: small;
+}
+
+.card-section > div:nth-of-type(4) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section > div:nth-of-type(4) > h2 {
+  font-size: larger;
+}
+
+.card-section > div:nth-of-type(4) div > p {
+  font-size: medium;
+}
+
+.card-section > div:nth-of-type(5) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section > div:nth-of-type(5) > h2 {
+  font-size: larger;
+}
+
+.card-section > div:nth-of-type(5) div > p {
+  font-size: medium;
+}
+
+.card-section > div:nth-of-type(6) > p {
+  font-size: small;
+}
+.card-section > div:nth-of-type(6) > h2 {
+  font-size: large;
+}
+
+/* card section one -------------------------------------- */
+/* ======================================================= */
+.card-section-one {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.card-section-one-not-grid {
+  width: 100%;
+  height: auto;
+}
+.card-section-one > div {
+  height: 200px;
+  width: 100%;
+}
+
+.card-section-one > div:nth-of-type(1) {
+  grid-column: 1 / span 3;
+  background-color: #d8f863d4;
+  box-shadow: 0 4px 12px #888888;
+  font-size: large;
+}
+
+.card-section-one > div:nth-of-type(1) > div {
+  -webkit-line-clamp: 4;
+}
+
+/* card section two -------------------------------------- */
+/* ======================================================= */
+.card-section-two {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.card-section-not-grid {
+  width: 100%;
+  height: auto;
+}
+.card-section-two > div {
+  height: 200px;
+  width: 100%;
+}
+
+.card-section-two > div:nth-of-type(1) {
+  grid-column: 1 / span 2;
+  background-color: #d8f863d4;
+  box-shadow: 0 4px 12px #888888;
+  font-size: large;
+}
+
+.card-section-two > div:nth-of-type(2) {
+  grid-column: 3 / span 1;
+  background-color: #d8f86374;
+}
+
+.card-section-two > div:nth-of-type(3) {
+  grid-column: 1 / span 3;
+  background-color: #d8f86374;
+}
+
+.card-section-two > div:nth-of-type(1) > div {
+  -webkit-line-clamp: 4;
+}
+
+.card-section-two > div:nth-of-type(2) > h2 {
+  font-size: large;
+}
+.card-section-two > div:nth-of-type(2) > p {
+  font-size: small;
+}
+
+.card-section-two > div:nth-of-type(3) > h2 {
+  font-size: large;
+}
+.card-section-two > div:nth-of-type(3) > p {
+  font-size: small;
+}
+
+/* card section three ---------------------------------------*/
+/* ======================================================= */
+.card-section-three {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.card-section-not-grid {
+  width: 100%;
+  height: auto;
+}
+.card-section-three > div {
+  height: 200px;
+  width: 100%;
+}
+
+.card-section-three > div:nth-of-type(1) {
+  grid-column: 1 / span 2;
+  background-color: #d8f863d4;
+  box-shadow: 0 4px 12px #888888;
+  font-size: large;
+}
+
+.card-section-three > div:nth-of-type(2) {
+  grid-column: 3 / span 1;
+  background-color: #d8f86374;
+}
+
+.card-section-three > div:nth-of-type(3) {
+  grid-column: 1 / span 1;
+  background-color: #d8f86374;
+}
+
+.card-section-three > div:nth-of-type(4) {
+  grid-column: 2 / span 2;
+  background-color: #d7f863;
+}
+
+.card-section-three > div:nth-of-type(5) {
+  grid-column: 1 / span 3;
+  background-color: #d7f863;
+}
+
+.card-section-three > div:nth-of-type(1) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section-three > div:nth-of-type(1) > div > p {
+  font-size: medium;
+}
+
+.card-section-three > div:nth-of-type(2) > h2 {
+  font-size: large;
+}
+.card-section-three > div:nth-of-type(2) > p {
+  font-size: small;
+}
+
+.card-section-three > div:nth-of-type(3) > h2 {
+  font-size: large;
+}
+.card-section-three > div:nth-of-type(3) > p {
+  font-size: small;
+}
+
+.card-section-three > div:nth-of-type(4) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section-three > div:nth-of-type(4) > h2 {
+  font-size: larger;
+}
+
+.card-section-three > div:nth-of-type(4) div > p {
+  font-size: medium;
+}
+
+.card-section-three > div:nth-of-type(5) > div {
+  -webkit-line-clamp: 4;
+}
+.card-section-three > div:nth-of-type(5) > h2 {
+  font-size: larger;
+}
+
+.card-section-three > div:nth-of-type(5) div > p {
+  font-size: medium;
+}
