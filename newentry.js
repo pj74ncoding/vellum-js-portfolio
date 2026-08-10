@@ -1,6 +1,35 @@
 let userLoggedIn;
 userLoggedIn = localStorage.getItem("user-logged-in");
 
+// sound effect-----------------------------------------------------------
+window.onload = () => {
+  const audio = document.getElementById("myAudio");
+  audio.play().catch((err) => {
+    console.warn("Autoplay.Blocked", err);
+  });
+};
+const userColourTheme = localStorage.getItem("colour-theme");
+const audio = document.getElementById("myAudio");
+const soundOn = document.getElementById("new-entry-sound-on-icon");
+const soundOff = document.getElementById("new-entry-sound-off-icon");
+
+soundOn.addEventListener("click", () => {
+  audio.volume = 0.5;
+  audio.play();
+});
+
+soundOff.addEventListener("click", () => {
+  audio.pause();
+});
+
+if (userColourTheme == "forest-green") {
+  audio.src = "sounds/soundreality-forest-sound-576537.mp3";
+} else if (userColourTheme == "sunrise") {
+  audio.src = "sounds/freesound_community-meditation_impromptu_01-17402.mp3";
+} else if (userColourTheme == "sea-blue") {
+  audio.src =
+    "sounds/freesound_community-calm-waves-crashing-against-a-beach-74813.mp3";
+}
 // profile menu ----------------------------------------------------------
 const newEntryProfileIconContainer = document.getElementById(
   "new-entry-profile-container",
@@ -31,17 +60,19 @@ newEntryLogInButton.addEventListener("click", () => {
   const userLoggedIn = localStorage.getItem("user-logged-in");
   if (userLoggedIn == "false") {
     loginSection.classList.remove("password-input-section-absolute-displayed");
-    // newEntryProfileMenu.classList.add("profile-menu-displayed");
+    textArea.classList.add("reflection-input-display");
   }
 });
 newEntryLogOutButton.addEventListener("click", () => {
   // newEntryProfileMenu.classList.add("profile-menu-displayed");
   userLoggedIn = localStorage.setItem("user-logged-in", "false");
   privateButton.innerHTML = public;
+  textArea.classList.remove("reflection-input-display");
   newEntryLogOutButton.classList.add("not-displayed");
   newEntryLogInButton.classList.remove("not-displayed");
   newEntryLoggedIn.textContent = "Sign In";
   newEntryProfileIcon.classList.remove("new-entry-profile-icon-logged-in");
+
   padlock.classList.remove("fa-solid");
   padlock.classList.remove("fa-lock");
   padlock.classList.remove("fa-lg");
@@ -116,6 +147,7 @@ loginConfirmButton.addEventListener("click", () => {
     newEntryLogInButton.classList.add("not-displayed");
     newEntryLogOutButton.classList.remove("not-displayed");
     vaultLoginErrorMessage.classList.add("vault-is-displayed");
+    textArea.classList.remove("reflection-input-display");
   } else {
     vaultLoginErrorMessage.classList.remove("vault-is-displayed");
   }
@@ -124,6 +156,7 @@ loginConfirmButton.addEventListener("click", () => {
 function closeLogin() {
   loginSection.classList.add("password-input-section-absolute-displayed");
   vaultLoginErrorMessage.classList.add("vault-is-displayed");
+  textArea.classList.remove("reflection-input-display");
   const loginUsername = document.getElementById("vault-username");
   const loginPassword = document.getElementById("vault-password");
   loginUsername.value = "";
@@ -335,7 +368,7 @@ privateButton.addEventListener("click", () => {
 });
 
 // discard section ------------------------------------------------------------
-
+let discardReflectionWindow = false;
 function discardReflection() {
   const reflectionInputForDiscard = reflection.value.trim();
   const titleInputForDiscard = title.value.trim();
@@ -354,6 +387,7 @@ function discardReflection() {
   } else {
     errorMessageParagraph.innerHTML = errorMessage;
     discardConfirmMessage.classList.remove("hide-confirm-message");
+    discardReflectionWindow = true;
   }
 }
 
@@ -365,6 +399,7 @@ const discardConfirmMessage = document.getElementById(
 no.addEventListener("click", (e) => {
   e.preventDefault();
   discardConfirmMessage.classList.add("hide-confirm-message");
+  discardReflectionWindow = false;
 });
 
 yes.addEventListener("click", (e) => {
@@ -373,212 +408,213 @@ yes.addEventListener("click", (e) => {
   reflection.value = "";
   characterCountInput.innerHTML = `0`;
   discardConfirmMessage.classList.add("hide-confirm-message");
+  discardReflectionWindow = false;
 });
 // save entry button ----------------------------------------------------------
 button.addEventListener("click", () => {
-  const titleInput = title.value.trim();
-  // const titleInput = " " + title.value; adds a space
-  // const reflectionInput = " " + reflection.value; adds a space
-  const reflectionInput = reflection.value.trim();
-  console.log(titleInput, reflectionInput);
-  if (!titleInput || !reflectionInput) {
-    if ((errorMessageParagraph.innerHTML = DiscardEmptyMessage)) {
-      errorMessageParagraph.innerHTML = errorMessage;
-    }
-    ErrorMessageContainer.appendChild(errorMessageDiv);
-    ErrorMessageContainer.classList.add("save-entry-error-message-displayed");
-    characterCountInput.innerHTML = `0`;
-  } else {
-    ErrorMessageContainer.classList.remove(
-      "save-entry-error-message-displayed",
-    );
-    textArea.classList.add("reflection-input-display");
-    animationContainer.classList.remove("displayed");
-
-    setTimeout(() => {
-      pageAnimation();
-    }, 500);
-
-    //   if there is nothing saved at the start save an empty array.
-    if (localStorage.getItem("public-vellum-entries") == null) {
-      localStorage.setItem("public-vellum-entries", "[]");
-    }
-
-    if (localStorage.getItem("private-vellum-entries") == null) {
-      localStorage.setItem("private-vellum-entries", "[]");
-    }
-    // get the new data and add it to the old data
-
-    const publicCreatedArray = JSON.parse(
-      localStorage.getItem("public-vellum-entries"),
-    );
-    const privateCreatedArray = JSON.parse(
-      localStorage.getItem("private-vellum-entries"),
-    );
-    if (isPrivate == true) {
-      if (!tagArray[0]) {
-        publicCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-      } else if (tagArray[0] && !tagArray[1]) {
-        publicCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-        tagArray = [];
-      } else if (tagArray[0] && tagArray[1] && !tagArray[2]) {
-        publicCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          createdTagTwo: {
-            createdEmoji: tagArray[1].emoji,
-            createdTitle: tagArray[1].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-        tagArray = [];
-      } else if (tagArray[0] && tagArray[1] && tagArray[2]) {
-        publicCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          createdTagTwo: {
-            createdEmoji: tagArray[1].emoji,
-            createdTitle: tagArray[1].tagTitle,
-          },
-          createdTagThree: {
-            createdEmoji: tagArray[2].emoji,
-            createdTitle: tagArray[2].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        tagArray = [];
-        createdTagSection.innerHTML = "";
+  if (discardReflectionWindow == false) {
+    const titleInput = title.value.trim();
+    const reflectionInput = reflection.value.trim();
+    console.log(titleInput, reflectionInput);
+    if (!titleInput || !reflectionInput) {
+      if ((errorMessageParagraph.innerHTML = DiscardEmptyMessage)) {
+        errorMessageParagraph.innerHTML = errorMessage;
       }
-      localStorage.setItem(
-        "public-vellum-entries",
-        JSON.stringify(publicCreatedArray),
-      );
+      ErrorMessageContainer.appendChild(errorMessageDiv);
+      ErrorMessageContainer.classList.add("save-entry-error-message-displayed");
+      characterCountInput.innerHTML = `0`;
     } else {
-      if (!tagArray[0]) {
-        privateCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-      } else if (tagArray[0] && !tagArray[1]) {
-        privateCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-        tagArray = [];
-      } else if (tagArray[0] && tagArray[1] && !tagArray[2]) {
-        privateCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          createdTagTwo: {
-            createdEmoji: tagArray[1].emoji,
-            createdTitle: tagArray[1].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        createdTagSection.innerHTML = "";
-        tagArray = [];
-      } else if (tagArray[0] && tagArray[1] && tagArray[2]) {
-        privateCreatedArray.push({
-          day: dayName,
-          date: todaysdate,
-          month: monthName,
-          year: year,
-          title: titleInput,
-          createdTagOne: {
-            createdEmoji: tagArray[0].emoji,
-            createdTitle: tagArray[0].tagTitle,
-          },
-
-          createdTagTwo: {
-            createdEmoji: tagArray[1].emoji,
-            createdTitle: tagArray[1].tagTitle,
-          },
-          createdTagThree: {
-            createdEmoji: tagArray[2].emoji,
-            createdTitle: tagArray[2].tagTitle,
-          },
-
-          reflection: reflectionInput,
-        });
-        tagArray = [];
-        createdTagSection.innerHTML = "";
-      }
-      localStorage.setItem(
-        "private-vellum-entries",
-        JSON.stringify(privateCreatedArray),
+      ErrorMessageContainer.classList.remove(
+        "save-entry-error-message-displayed",
       );
-    }
+      textArea.classList.add("reflection-input-display");
+      animationContainer.classList.remove("displayed");
 
-    //   clear the input fields
-    title.value = "";
-    reflection.value = "";
-    console.log(titleInput.length);
-    console.log("publicstored", publicCreatedArray);
-    console.log("privatestored", privateCreatedArray);
+      setTimeout(() => {
+        pageAnimation();
+      }, 500);
+
+      //   if there is nothing saved at the start save an empty array.
+      if (localStorage.getItem("public-vellum-entries") == null) {
+        localStorage.setItem("public-vellum-entries", "[]");
+      }
+
+      if (localStorage.getItem("private-vellum-entries") == null) {
+        localStorage.setItem("private-vellum-entries", "[]");
+      }
+      // get the new data and add it to the old data
+
+      const publicCreatedArray = JSON.parse(
+        localStorage.getItem("public-vellum-entries"),
+      );
+      const privateCreatedArray = JSON.parse(
+        localStorage.getItem("private-vellum-entries"),
+      );
+      if (isPrivate == true) {
+        if (!tagArray[0]) {
+          publicCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+        } else if (tagArray[0] && !tagArray[1]) {
+          publicCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+          tagArray = [];
+        } else if (tagArray[0] && tagArray[1] && !tagArray[2]) {
+          publicCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            createdTagTwo: {
+              createdEmoji: tagArray[1].emoji,
+              createdTitle: tagArray[1].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+          tagArray = [];
+        } else if (tagArray[0] && tagArray[1] && tagArray[2]) {
+          publicCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            createdTagTwo: {
+              createdEmoji: tagArray[1].emoji,
+              createdTitle: tagArray[1].tagTitle,
+            },
+            createdTagThree: {
+              createdEmoji: tagArray[2].emoji,
+              createdTitle: tagArray[2].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          tagArray = [];
+          createdTagSection.innerHTML = "";
+        }
+        localStorage.setItem(
+          "public-vellum-entries",
+          JSON.stringify(publicCreatedArray),
+        );
+      } else {
+        if (!tagArray[0]) {
+          privateCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+        } else if (tagArray[0] && !tagArray[1]) {
+          privateCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+          tagArray = [];
+        } else if (tagArray[0] && tagArray[1] && !tagArray[2]) {
+          privateCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            createdTagTwo: {
+              createdEmoji: tagArray[1].emoji,
+              createdTitle: tagArray[1].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          createdTagSection.innerHTML = "";
+          tagArray = [];
+        } else if (tagArray[0] && tagArray[1] && tagArray[2]) {
+          privateCreatedArray.push({
+            day: dayName,
+            date: todaysdate,
+            month: monthName,
+            year: year,
+            title: titleInput,
+            createdTagOne: {
+              createdEmoji: tagArray[0].emoji,
+              createdTitle: tagArray[0].tagTitle,
+            },
+
+            createdTagTwo: {
+              createdEmoji: tagArray[1].emoji,
+              createdTitle: tagArray[1].tagTitle,
+            },
+            createdTagThree: {
+              createdEmoji: tagArray[2].emoji,
+              createdTitle: tagArray[2].tagTitle,
+            },
+
+            reflection: reflectionInput,
+          });
+          tagArray = [];
+          createdTagSection.innerHTML = "";
+        }
+        localStorage.setItem(
+          "private-vellum-entries",
+          JSON.stringify(privateCreatedArray),
+        );
+      }
+
+      //   clear the input fields
+      title.value = "";
+      reflection.value = "";
+      console.log(titleInput.length);
+      console.log("publicstored", publicCreatedArray);
+      console.log("privatestored", privateCreatedArray);
+    }
   }
 });
 
@@ -666,14 +702,3 @@ console.log(`${dayName}, ${todaysdate} ${monthName}, ${year}`); // Example: "Mon
 
 const currentDate = document.getElementById("form-date");
 currentDate.innerHTML = `${dayName} ${todaysdate} ${monthName} ${year}`;
-
-const testArrays = [
-  { country: "england" },
-  { name: "pete", team: "leicester" },
-  {
-    tagone: { id: "one", position: "forward" },
-    tagtwo: { id: "two", position: "defender" },
-  },
-];
-
-console.log("petestest", testArrays[2].tagone.position);

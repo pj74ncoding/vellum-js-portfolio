@@ -44,6 +44,38 @@ userLoggedIn = localStorage.getItem("user-logged-in");
 let displaySignInMessage = false;
 let secondaryDisplaySignInMessage = false;
 
+// sound effect-----------------------------------------------------------
+window.onload = () => {
+  const audio = document.getElementById("myAudio");
+  audio.play().catch((err) => {
+    console.warn("Autoplay.Blocked", err);
+  });
+};
+
+const userColourTheme = localStorage.getItem("colour-theme");
+const audio = document.getElementById("myAudio");
+const soundOn = document.getElementById("vault-sound-on-icon");
+const soundOff = document.getElementById("vault-sound-off-icon");
+
+soundOn.addEventListener("click", () => {
+  const userColourTheme = localStorage.getItem("colour-theme");
+  const audio = document.getElementById("myAudio");
+  audio.volume = 0.5;
+  audio.play();
+});
+
+soundOff.addEventListener("click", () => {
+  audio.pause();
+});
+
+if (userColourTheme == "forest-green") {
+  audio.src = "sounds/soundreality-forest-sound-576537.mp3";
+} else if (userColourTheme == "sunrise") {
+  audio.src = "sounds/freesound_community-meditation_impromptu_01-17402.mp3";
+} else if (userColourTheme == "sea-blue") {
+  audio.src =
+    "sounds/freesound_community-calm-waves-crashing-against-a-beach-74813.mp3";
+}
 // profile menu ----------------------------------------------------------
 const vaultProfileIconContainer = document.getElementById(
   "vault-profile-container",
@@ -157,7 +189,6 @@ vaultLogOutButton.addEventListener("click", () => {
   cardSection.classList.remove("not-displayed-entry-section");
   secondaryDisplaySignInMessage = false;
   publicOrPrivate();
-  // isPublicVellum == true;
 });
 
 function closeLogin() {
@@ -239,7 +270,7 @@ function publicOrPrivate() {
         const storedPublicVellum = JSON.parse(
           localStorage.getItem("public-vellum-entries"),
         );
-        console.log("public-vellum-true");
+
         vaultHeading.innerHTML = "My Public Vault";
         publicOrPrivateButton.innerHTML = "Change To Private Reflections";
         vaultEmptyMessageContainer.classList.add(
@@ -295,6 +326,7 @@ function publicOrPrivate() {
             deleteVellumDiv.classList.add("vault-confirm-is-displayed");
             publicOrPrivate();
           }
+
           // card section
           const cardsectionTagContainer = document.createElement("div");
           if (vellum.createdTagOne) {
@@ -384,8 +416,9 @@ function publicOrPrivate() {
           cardSectionHeading.innerHTML = vellum.title;
           cardSectionReflectionParagraph.innerHTML = vellum.reflection;
           expandButton.innerHTML = "EXPAND";
+
           expandButton.onclick = () => {
-            if (isExpanded == true) {
+            if (isExpanded == false) {
               reflectionParagraphDiv.classList.remove(
                 "vault-reflection-paragraph-div",
               );
@@ -393,7 +426,7 @@ function publicOrPrivate() {
                 "vault-reflection-paragraph-div-expand",
               );
               expandButton.innerHTML = "SHRINK";
-              isExpanded = false;
+              isExpanded = true;
             } else {
               reflectionParagraphDiv.classList.remove(
                 "vault-reflection-paragraph-div-expand",
@@ -402,7 +435,7 @@ function publicOrPrivate() {
                 "vault-reflection-paragraph-div",
               );
               expandButton.innerHTML = "EXPAND";
-              isExpanded = true;
+              isExpanded = false;
             }
           };
 
@@ -633,8 +666,9 @@ function publicOrPrivate() {
           cardSectionHeading.innerHTML = vellum.title;
           cardSectionReflectionParagraph.innerHTML = vellum.reflection;
           expandButton.innerHTML = "EXPAND";
+
           expandButton.onclick = () => {
-            if (isExpanded == true) {
+            if (isExpanded == false) {
               reflectionParagraphDiv.classList.remove(
                 "vault-reflection-paragraph-div",
               );
@@ -642,7 +676,7 @@ function publicOrPrivate() {
                 "vault-reflection-paragraph-div-expand",
               );
               expandButton.innerHTML = "SHRINK";
-              isExpanded = false;
+              isExpanded = true;
             } else {
               reflectionParagraphDiv.classList.remove(
                 "vault-reflection-paragraph-div-expand",
@@ -651,7 +685,7 @@ function publicOrPrivate() {
                 "vault-reflection-paragraph-div",
               );
               expandButton.innerHTML = "EXPAND";
-              isExpanded = true;
+              isExpanded = false;
             }
           };
 
@@ -883,8 +917,10 @@ function publicOrPrivate() {
         cardSectionHeading.innerHTML = vellum.title;
         cardSectionReflectionParagraph.innerHTML = vellum.reflection;
         expandButton.innerHTML = "EXPAND";
+        console.log(isExpanded);
         expandButton.onclick = () => {
-          if (isExpanded == true) {
+          if (isExpanded == false) {
+            console.log(isExpanded);
             reflectionParagraphDiv.classList.remove(
               "vault-reflection-paragraph-div",
             );
@@ -892,7 +928,7 @@ function publicOrPrivate() {
               "vault-reflection-paragraph-div-expand",
             );
             expandButton.innerHTML = "SHRINK";
-            isExpanded = false;
+            isExpanded = true;
           } else {
             reflectionParagraphDiv.classList.remove(
               "vault-reflection-paragraph-div-expand",
@@ -901,7 +937,7 @@ function publicOrPrivate() {
               "vault-reflection-paragraph-div",
             );
             expandButton.innerHTML = "EXPAND";
-            isExpanded = true;
+            isExpanded = false;
           }
         };
 

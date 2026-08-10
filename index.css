@@ -65,7 +65,7 @@
 }
 
 .my-vault:hover {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--dark-text-color);
   padding-bottom: 2px;
   transition: all 500ms ease-in-out;
 }
@@ -112,6 +112,23 @@
   font-weight: 500;
 }
 
+.index-sound-icon-container {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  gap: 10px;
+  margin-left: 10px;
+}
+.sound-on-icon,
+.sound-off-icon {
+  color: black;
+}
+
+.sound-on-icon:hover,
+.sound-off-icon:hover {
+  cursor: pointer;
+}
+
 /* password-form-absolute */
 
 .password-input-section-absolute {
@@ -143,7 +160,6 @@
   padding: 10px;
   border: var(--password-form-border);
   border-radius: 8px;
-  /* padding: 10px; */
 }
 
 .password-form h3 {
@@ -179,7 +195,7 @@
   background: var(--nav-background);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--login-confirm-button-colour);
   transition: all 500ms ease-in-out;
 }
 
@@ -262,7 +278,7 @@
   font-weight: bold;
   height: 30px;
   width: 250px;
-  color: white;
+  color: var(--public-or-private-button);
 }
 
 .home-public-or-private-button:hover {
@@ -302,28 +318,6 @@
   color: var(--home-padlock);
 }
 
-.home-public-or-private-button {
-  transition: all 500ms;
-  padding: 5px 10px;
-  border-radius: 8px;
-  background-color: #bbfa8f;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.home-public-or-private-button:hover {
-  cursor: pointer;
-  box-shadow: 0px 4px 5px grey;
-  transition: all 500ms;
-}
-.vault-your-reflections-header {
-  background-color: var(--main-background);
-  border-bottom: 2px solid green;
-  padding-bottom: 5px;
-  width: 240px;
-  color: green;
-}
 /* card section and grid layout is in index-grid-layout.css */
 
 /* feeling inspired section */
@@ -362,7 +356,7 @@
 .feeling-inspired-paragraph {
   margin-top: 15px;
   font-size: large;
-  color: var(----feeling-inspired-paragraph);
+  color: var(--feeling-inspired-paragraph);
 }
 
 .new-entry-page-link {
@@ -405,12 +399,11 @@
 
 .footer-home-nav a {
   text-decoration: none;
-  color: black;
   font-size: var(--footer-nav-a-font-size);
   color: var(--dark-text-color);
 }
 
 .footer-home-nav a:hover {
   cursor: pointer;
-  border-bottom: 2px solid darkgreen;
+  border-bottom: var(--footer-nav-a-border-hover);
 }

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="created-elements.css" />
     <title>New Entry</title>
   </head>
-  <body>
+  <body class="body-element">
     <nav class="new-entry-nav">
       <a class="home-page-link" href="index.html"
         ><h2 class="title">The Digital Vellum</h2></a
@@ -39,13 +39,28 @@
         <div class="logged-in-paragraph-container">
           <p id="new-entry-logged-in"></p>
         </div>
+
+        <!-- audio -->
+        <div class="new-entry-sound-icon-container">
+          <audio id="myAudio" loop>
+            <source type="audio/mpeg" />
+          </audio>
+          <i
+            id="new-entry-sound-on-icon"
+            class="fa-solid fa-volume-high sound-on-icon"
+          ></i>
+          <i
+            id="new-entry-sound-off-icon"
+            class="fa-solid fa-volume-off sound-off-icon"
+          ></i>
+        </div>
       </div>
 
       <!-- profile menu -->
       <div class="profile-menu profile-menu-displayed">
         <button id="new-entry-log-in-button" class="sign-in">Sign In</button>
-
         <button id="new-entry-log-out-button" class="sign-out">Sign Out</button>
+        <a href="settings.html"><button class="settings">Settings</button></a>
       </div>
     </nav>
     <!-- password input-section -->
@@ -321,8 +336,6 @@
         </div>
       </section>
     </div>
-
-    <!-- footer -->
     <footer>
       <div class="footer-newentry-container">
         <p>&copy; 2026 The Digital Vellum. Designed for reflection.</p>
@@ -333,7 +346,8 @@
         </nav>
       </div>
     </footer>
-    <!-- <br /><br /> -->
+
     <script src="newentry.js"></script>
+    <script src="settings-local-storage.js"></script>
   </body>
 </html>

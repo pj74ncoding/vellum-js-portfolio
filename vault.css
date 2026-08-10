@@ -67,7 +67,7 @@
   height: 30px;
   width: 95px;
   border: none;
-  background-color: darkgreen;
+  background-color: var(--dark-text-color);
   color: white;
   box-shadow: 0 4px 6px #888888;
   transition: all 250ms ease-in-out;
@@ -76,13 +76,13 @@
 
 .new-entry-button:hover {
   cursor: pointer;
-  background-color: rgba(0, 100, 0, 0.502);
+  background-color: var(--new-entry-button-hover);
   transition: all 250ms ease-in-out;
   border: 1px solid black;
 }
 
 .vault-profile-icon-logged-in {
-  color: green;
+  color: var(--profile-logged-in);
 }
 
 .profile-icon {
@@ -106,6 +106,22 @@
   color: black;
 }
 
+.vault-sound-icon-container {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  gap: 10px;
+  margin-left: 10px;
+}
+.sound-on-icon,
+.sound-off-icon {
+  color: black;
+}
+
+.sound-on-icon:hover,
+.sound-off-icon:hover {
+  cursor: pointer;
+}
 /* password-form-absolute */
 
 .password-input-section-absolute {
@@ -135,13 +151,12 @@
   width: 50%;
   gap: 22px;
   padding: 10px;
-  border: 1px solid darkgreen;
+  border: var(--password-form-border);
   border-radius: 8px;
-  /* padding: 10px; */
 }
 
 .password-form h3 {
-  color: darkgreen;
+  color: var(--password-form-h3);
 }
 .password-form-label-and-input-container {
   width: 75%;
@@ -152,7 +167,7 @@
 
 .password-form-label-and-input-container label {
   font-weight: bold;
-  color: darkgreen;
+  color: var(--password-form-label);
 }
 
 .login-error-message {
@@ -173,7 +188,7 @@
   background: var(--nav-background);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--login-confirm-button-colour);
   transition: all 500ms ease-in-out;
 }
 
@@ -194,7 +209,7 @@
   height: 25px;
   width: 100px;
   border: none;
-  background-color: #b0f863;
+  background-color: var(--background-color-close-button);
   border-radius: 4px;
   font-size: 16px;
 }
@@ -217,7 +232,7 @@
   padding-left: var(--nav-padding-left);
 }
 .left-section-image {
-  background-image: url("images/richard-hedrick-PizEUj1IXY8-unsplash.jpg");
+  background-image: var(--vault-background-image);
   background-size: cover;
   background-repeat: no-repeat;
   width: 90%;
@@ -276,7 +291,7 @@
   font-weight: bold;
   height: 30px;
   width: 250px;
-  color: white;
+  color: var(--public-or-private-button);
 }
 
 .public-or-private-button:hover {
@@ -308,14 +323,14 @@
   width: 30px;
 }
 .padlock-open {
-  color: green;
+  color: var(--home-padlock);
 }
 .vault-your-reflections-header {
   background-color: var(--main-background);
-  border-bottom: 2px solid green;
+  border-bottom: var(--reflection-header-border-bottom);
   padding-bottom: 5px;
   width: 240px;
-  color: green;
+  color: var(--reflections-header);
 }
 
 .vault-entry-section {
@@ -354,7 +369,7 @@
   height: 60px;
   width: 60px;
   border-radius: 8px;
-  background-color: #d7f863;
+  background-color: var(--feeling-inspired-icon);
 }
 
 .vault-empty-h2 {
@@ -364,7 +379,7 @@
 .vault-empty-paragraph {
   margin-top: 15px;
   font-size: large;
-  color: #6d9c07;
+  color: var(--feeling-inspired-paragraph);
 }
 
 .new-entry-page-link {
@@ -426,12 +441,11 @@
 
 .footer-vault-nav a {
   text-decoration: none;
-  color: black;
   font-size: var(--footer-nav-a-font-size);
   color: var(--dark-text-color);
 }
 
 .footer-vault-nav a:hover {
   cursor: pointer;
-  border-bottom: 2px solid darkgreen;
+  border-bottom: var(--footer-nav-a-border-hover);
 }

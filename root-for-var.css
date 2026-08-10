@@ -1,4 +1,6 @@
-:root {
+/* forest green theme ------------------------------------------------------------------------- */
+
+[data-theme="forest-green"] {
   --nav-background: linear-gradient(45deg, green, 40%, lightgreen);
   --nav-title-color: white;
   --nav-height: 100px;
@@ -11,40 +13,174 @@
   --logged-in-paragraph: darkgreen;
   --sign-in-hover: #9bfa8f57;
   --sign-out-hover: #9bfa8f57;
-  --main-background: #f9fee7;
+  --main-background: #f7fee7;
+  --public-or-private-button: white;
   --home-padlock: green;
-  --reflections-header: green;
-  --reflection-header-border-bottom: 2px solid green;
-  /* grid */
-  --background-color-one: #d8f863d4;
-  --background-color-two: #d8f86374;
-  --reflection-date-heading: darkgreen;
-  --reflection-paragraph: darkgreen;
-  --feeling-inspired-icon: #d7f863;
-  --feeling-inspired-paragraph: #6d9c07;
 
+  /* footer */
   --footer-background-color: lightgreen;
   --footer-height: 100px;
   --footer-padding-left: 25px;
   --footer-padding-right: 25px;
   --footer-p-font-size: 14px;
-
+  --footer-height: 100px;
   --footer-nav-a-font-size: 14px;
+  --footer-nav-a-border-hover: 2px solid darkgreen;
+
+  /* grid for index*/
+  --background-color-one: #d8f863d4;
+  --background-color-two: #d8f86374;
+  --background-color-three: #d8f86391;
+
+  /* feeling inspired */
+  --feeling-inspired-icon: #d7f863;
+  --feeling-inspired-paragraph: #6d9c07;
   /* password form */
   --password-form-border: 1px solid darkgreen;
   --password-form-h3: darkgreen;
   --password-form-label: darkgreen;
   --background-color-close-button: #b0f863;
+  --login-confirm-button-colour: white;
   /* index and vault */
   --header-paragraph-color: grey;
-  /* newentry */
+  /* vault --------------------------------------------------------*/
+  /* vault background image */
+  --vault-background-image: url("images/tree.jpg");
+  --reflection-date-heading: darkgreen;
+  --reflection-paragraph: darkgreen;
+  --reflections-header: green;
+  --reflection-header-border-bottom: 2px solid green;
+  /* vault created elements reflection container */
+  --container-background-color: #9fc80918;
+  --vault-date-paragraph: green;
+  --vault-created-tag: #cffa8f;
+  --cross-icon-div-hover: #9ec809;
+  --vault-reflection-paragraph-div-p: darkgreen;
+  --expand-button: #9ec809;
+  /* new entry ----------------------------------------------------- */
   --placeholder-color: lightgrey;
+  --new-entry-background-image: url("images/aron-weerakoon-WDRgDVClkjo-unsplash.jpg");
+  --form-entry-header-p: #6d9c07;
+  --input-section-for-tag: #eefcbb;
+  --create-tag-newentry-header-button: #d7f863;
+  --input-section-for-tag: #eefcbb;
+  --input-add-tag-button: #88c809;
+  --input-add-tag-button-hover: #88c809d1;
+  --created-tag-background-image: url("images/text.jpg");
+  --new-entry-animation-background-image: url("images/gulfer-ergin-LUGuCtvlk1Q-unsplash.jpg");
+  --input-counter-container: green;
+  --discard-button-hover-private-button-hover-insert-memory-button-hover: #6d9c07;
+  --discard-button-color-private-button-color-insert-memory-button-color: #6d9c07;
+  --save-entry-button-border: 2px solid darkgreen;
+  --save-entry-button-hover: #6d9c07;
+  /* new entry created elements created tags section */
+  --delete-tag-button: green;
+  /* new entry animation */
+  --success-message: green;
+
+  /* settings page */
+  --change-theme-button-text-colour: white;
 }
 
-[data-theme="light"] {
+/* sunrise theme ------------------------------------------------------------------------- */
+
+[data-theme="sunrise"] {
+  /* --nav-background: linear-gradient(45deg, darkorange, 30%, orange, 30%, yellow); */
+  --nav-background: linear-gradient(45deg, orange, 50%, yellow);
+
+  --nav-title-color: white;
+  --nav-height: 100px;
+  --nav-padding-left: 25px;
+  --nav-padding-right: 25px;
+  --dark-text-color: darkorange;
+
+  --new-entry-button-hover: orange;
+  --profile-logged-in: orange;
+  --logged-in-paragraph: darkorange;
+  --sign-in-hover: #faed8f;
+  --sign-out-hover: #faed8f;
+  --main-background: #fefbe7;
+  --public-or-private-button: black;
+  --home-padlock: orange;
+  --reflections-header: orange;
+  --reflection-header-border-bottom: 2px solid orange;
+
+  /* footer */
+  --footer-background-color: #faed8f;
+  --footer-height: 100px;
+  --footer-padding-left: 25px;
+  --footer-padding-right: 25px;
+  --footer-p-font-size: 14px;
+  --footer-height: 100px;
+  --footer-nav-a-font-size: 14px;
+  --footer-nav-a-border-hover: 2px solid darkorange;
+
+  /* grid for index*/
+  --background-color-one: #f8e663;
+  --background-color-two: #faed8f;
+  --background-color-three: rgba(255, 255, 0, 0.195);
+
+  /* feeling inspired */
+  --feeling-inspired-icon: #f8ce63;
+  --feeling-inspired-paragraph: orange;
+  /* password form */
+  --password-form-border: 1px solid darkorange;
+  --password-form-h3: darkorange;
+  --password-form-label: darkorange;
+  --login-confirm-button-colour: black;
+  --background-color-close-button: #f59c27;
+  /* index and vault */
+  --header-paragraph-color: grey;
+  /* vault --------------------------------------------------------*/
+  /* vault background image */
+  --vault-background-image: url("images/sunrise-ocean.jpg");
+  --reflection-date-heading: darkorange;
+  --reflection-paragraph: darkorange;
+  --reflections-header: orange;
+  --reflection-header-border-bottom: 2px solid orange;
+
+  /* vault created elements reflection container */
+  --container-background-color: lightyellow;
+  --vault-date-paragraph: orange;
+  --vault-created-tag: #f5dd27;
+  --cross-icon-div-hover: #f59c27;
+  --vault-reflection-paragraph-div-p: darkorange;
+  --expand-button: #f59c27;
+  /* new entry ----------------------------------------------------- */
+  --placeholder-color: lightgrey;
+  --new-entry-background-image: url("images/sunrise-with-person.jpg");
+  /* --form-entry-header-p: #6d9c07; */
+  --input-section-for-tag: #faed8f;
+  --create-tag-newentry-header-button: yellow;
+  --input-add-tag-button: orange;
+  --input-add-tag-button-hover: rgba(255, 166, 0, 0.741);
+  --created-tag-background-image: url("images/text-sunrise.jpg");
+  --new-entry-animation-background-image: url("images/gulfer-ergin-LUGuCtvlk1Q-unsplash.jpg");
+  --input-counter-container: darkorange;
+  --discard-button-hover-private-button-hover-insert-memory-button-hover: rgb(
+    253,
+    167,
+    7
+  );
+  --discard-button-color-private-button-color-insert-memory-button-color: rgb(
+    253,
+    167,
+    7
+  );
+  --save-entry-button-border: 2px solid darkorange;
+  --save-entry-button-hover: #f5c527;
+  /* new entry created elements created tags section */
+  --delete-tag-button: orange;
+  /* new entry animation */
+  --success-message: orange;
+
+  /* settings page */
+  --change-theme-button-text-colour: black;
 }
 
-[data-theme="dark"] {
+/* sea blue theme ------------------------------------------------------------------------- */
+
+[data-theme="sea-blue"] {
   --nav-background: linear-gradient(45deg, blue, 40%, lightblue);
   --nav-title-color: white;
   --nav-height: 100px;
@@ -58,27 +194,72 @@
   --sign-out-hover: #8f94fa57;
 
   --main-background: #e7fbfe;
+  --public-or-private-button: white;
   --home-padlock: blue;
-  --reflections-header: blue;
-  --reflection-header-border-bottom: 2px solid blue;
-  /* grid */
-  --background-color-one: #63ddf8d4;
-  --background-color-two: #63cef874;
-  --reflection-date-heading: darkblue;
-  --reflection-paragraph: darkblue;
 
-  --feeling-inspired-icon: #63ddf8;
   --feeling-inspired-paragraph: #076a9c;
   --feeling-inspired-icon: #63d3f8;
+  /* footer */
   --footer-background-color: lightblue;
+  --footer-height: 100px;
+  --footer-padding-left: 25px;
+  --footer-padding-right: 25px;
+  --footer-p-font-size: 14px;
+  --footer-height: 100px;
+  --footer-nav-a-font-size: 14px;
+  --footer-nav-a-border-hover: 2px solid darkblue;
+  /* grid for index*/
+  --background-color-one: #63ddf8d4;
+  --background-color-two: #63cef874;
+  --background-color-three: #63ddf859;
+  /* feeling inspired */
 
+  --feeling-inspired-paragraph: #076a9c;
+  --feeling-inspired-icon: #63d3f8;
   /* password form */
   --password-form-border: 1px solid darkblue;
   --password-form-h3: darkblue;
   --password-form-label: darkblue;
+  --login-confirm-button-colour: white;
   --background-color-close-button: #63e9f8;
   /* index and vault */
   --header-paragraph-color: grey;
-  /* newentry */
+  /* vault --------------------------------------------------------*/
+  /* vault background image */
+  --vault-background-image: url("images/peaceful.jpg");
+  --reflection-date-heading: darkblue;
+  --reflection-paragraph: darkblue;
+  --reflections-header: blue;
+  --reflection-header-border-bottom: 2px solid blue;
+  /* vault created elements reflection container */
+  --container-background-color: #0972c818;
+  --vault-date-paragraph: blue;
+  --vault-created-tag: #8fdafa;
+  --cross-icon-div-hover: #0968c8;
+  --vault-reflection-paragraph-div-p: darkblue;
+  --expand-button: #0968c8;
+  /* new entry ----------------------------------------------------- */
   --placeholder-color: lightgrey;
+  --new-entry-background-image: url("images/sea.jpg");
+  --form-entry-header-p: #07909c;
+  --input-section-for-tag: #e7fbfe;
+  --create-tag-newentry-header-button: #63ddf8;
+  --input-section-for-tag: #bbfcf7;
+  --input-add-tag-button: #0998c8;
+  --input-add-tag-button-hover: #09c8c8d1;
+  --created-tag-background-image: url("images/text-blue.jpg");
+  --new-entry-animation-background-image: url("images/gulfer-ergin-LUGuCtvlk1Q-unsplash.jpg");
+  --input-counter-container: blue;
+  --discard-button-hover-private-button-hover-insert-memory-button-hover: #07909c;
+  --discard-button-color-private-button-color-insert-memory-button-color: #07909c;
+  --save-entry-button-border: 2px solid darkblue;
+  --save-entry-button-hover: #07929c;
+  /* new entry created elements created tags section */
+  --delete-tag-button: blue;
+
+  /* new entry animation */
+  --success-message: blue;
+
+  /* settings page */
+  --change-theme-button-text-colour: white;
 }

@@ -1,0 +1,573 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-VariableFont_wght.woff2");
+}
+/* navigation */
+.new-entry-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding-left: var(--nav-padding-left);
+  padding-right: var(--nav-padding-right);
+  background: var(--nav-background);
+  box-shadow: 4px 4px 8px grey;
+  position: relative;
+  z-index: 1;
+}
+
+.home-page-link {
+  text-decoration: none;
+}
+.title {
+  color: var(--nav-title-color);
+  transition: all 500ms ease-in-out;
+}
+.title:hover {
+  transform: scale(1.03);
+  transition: all 500ms ease-in-out;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.page-container a {
+  text-decoration: none;
+  color: black;
+}
+.vault-page {
+  border-bottom: 2px solid black;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+.button-and-icon-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  height: 40px;
+}
+
+.my-vault-link {
+  color: var(--dark-text-color);
+  transition: all 250ms ease-in-out;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.my-vault-link:hover {
+  border-bottom: 2px solid var(--dark-text-color);
+  padding-bottom: 2px;
+  transition: all 250ms ease-in-out;
+}
+
+.new-entry-link {
+  text-decoration: none;
+}
+.new-entry-button {
+  font-size: small;
+  border-radius: 6px;
+  height: 30px;
+  width: 95px;
+  border: none;
+  background-color: var(--dark-text-color);
+  color: white;
+  box-shadow: 0 4px 6px #888888;
+  transition: all 250ms ease-in-out;
+  margin-left: 15px;
+}
+
+.new-entry-button:hover {
+  cursor: pointer;
+  background-color: var(--new-entry-button-hover);
+  transition: all 250ms ease-in-out;
+  border: 1px solid black;
+}
+
+.vault-profile-icon-logged-in {
+  color: var(--profile-logged-in);
+}
+
+.profile-icon {
+  transition: all 200ms ease-in-out;
+}
+.profile-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+
+.settings-not-displayed {
+  display: none;
+}
+
+.settings-vault-is-displayed {
+  visibility: hidden;
+}
+.logged-in-paragraph-container {
+  width: 80px;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--logged-in-paragraph);
+  font-weight: 500;
+}
+.pages-and-icon-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.settings-profile-menu {
+  right: 90px;
+  top: 75px;
+  font-size: small;
+  height: 35px;
+  width: 80px;
+  padding: 5px 0px;
+  box-shadow: 0px 4px 5px grey;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.settings-profile-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px; /* Move above the box */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent; /* Left side transparent */
+  border-right: 10px solid transparent; /* Right side transparent */
+  border-bottom: 10px solid white; /* Triangle color matches box */
+}
+
+.profile-menu-displayed {
+  display: none;
+}
+.profile-icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+.new-entry-profile-icon-div {
+  background-color: var(--main-background);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.sign-in,
+.sign-out,
+.settings {
+  background: none;
+  width: 100%;
+  height: 25px;
+  border: none;
+  transition: all 500ms ease-in-out;
+  font-weight: 400;
+}
+.sign-in:hover,
+.sign-out:hover,
+.settings:hover {
+  background-color: var(--sign-in-hover);
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+.settings-sound-icon-container {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.sound-on-icon,
+.sound-off-icon {
+  color: black;
+}
+
+.sound-on-icon:hover,
+.sound-off-icon:hover {
+  cursor: pointer;
+}
+
+/* password-form-absolute */
+
+.password-input-section-absolute {
+  width: 100%;
+  height: 92vh;
+  background-color: var(--main-background);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vault-is-displayed, .error-is-hidden {
+  visibility: hidden;
+}
+.not-displayed {
+  display: none;
+}
+
+/* .error-is-hidden {
+  visibility: hidden;
+} */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 40%;
+  gap: 22px;
+  padding: 10px;
+  border: var(--password-form-border);
+  border-radius: 8px;
+}
+
+.password-form h3 {
+  color: var(--password-form-h3);
+}
+.password-form-label-and-input-container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.password-form-label-and-input-container label {
+  font-weight: bold;
+  color: var(--password-form-label);
+}
+
+.login-error-message {
+  color: darkred;
+  font-weight: bold;
+  font-style: italic;
+}
+.password-form-label-and-input-container input {
+  width: 125px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.vault-login-confirm-button {
+  width: 30%;
+  height: 30px;
+  font-size: 16px;
+  background: var(--nav-background);
+  border: none;
+  border-radius: 8px;
+  color: var(--login-confirm-button-colour);
+  transition: all 500ms ease-in-out;
+}
+
+.vault-login-confirm-button:hover,
+.vault-login-close-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms ease-in-out;
+}
+
+.password-form-close-button-container {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+}
+.vault-login-close-button {
+  height: 25px;
+  width: 100px;
+  border: none;
+  background-color: var(--background-color-close-button);
+  border-radius: 4px;
+  font-size: 16px;
+}
+/* main-body-section */
+
+.main-body-section {
+  display: grid;
+  grid-template-columns: 350px auto 350px;
+  height: 1000px;
+  padding-bottom: 100px;
+  background-color: var(--main-background);
+}
+
+.main-body-section-not-displayed {
+  display: none;
+}
+.settings-header-container {
+  width: 100%;
+  height: 180px;
+  padding-top: 80px;
+}
+
+.settings-header-paragraph {
+  margin-top: 20px;
+  line-height: 1.5;
+  color: var(--header-paragraph-color);
+}
+
+.theme-heading-and-paragraph-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* error messsage */
+
+.theme-error-message-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.theme-error-message {
+  padding: 5px 15px;
+  background-color: white;
+  color: darkred;
+  font-style: italic;
+  border: 1px solid darkred;
+  border-radius: 8px;
+  font-size: 15px;
+}
+/* theme card container */
+.theme-card-section-container {
+  width: 100%;
+  height: 800px;
+}
+
+.settings-header-and-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change-theme-button {
+  transition: all 500ms;
+  border-radius: 8px;
+  background: var(--nav-background);
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  width: 150px;
+  color: var(--change-theme-button-text-colour);
+}
+
+.change-theme-button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px grey;
+  transition: all 500ms;
+}
+
+#theme-card-section-form {
+  display: flex;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forest-green-card-main-container,
+.sunrise-card-main-container,
+.sea-blue-card-main-container {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 300ms ease-in-out;
+}
+
+.forest-green-card-main-container:hover,
+.sunrise-card-main-container:hover,
+.sea-blue-card-main-container:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0px 4px 5px grey;
+}
+
+.forest-green-card-main-container {
+  background: linear-gradient(45deg, green, 40%, lightgreen);
+}
+
+.sunrise-card-main-container {
+  background: linear-gradient(45deg, orange, 50%, yellow);
+}
+.sea-blue-card-main-container {
+  background: linear-gradient(45deg, blue, 40%, lightblue);
+}
+
+.forest-green-card,
+.sunrise-card,
+.sea-blue-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.forest-green-card {
+  border: 2px solid darkgreen;
+}
+
+.sunrise-card {
+  border: 2px solid darkorange;
+}
+.sea-blue-card {
+  border: 2px solid darkblue;
+}
+.image-main-container {
+  height: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.image-container {
+  width: 48%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#forest-green-vault-image {
+  background-image: url("images/tree.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid darkgreen;
+}
+
+#forest-green-new-entry-image {
+  background-image: url("images/aron-weerakoon-WDRgDVClkjo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid darkgreen;
+}
+
+#sunrise-vault-image {
+  background-image: url("images/sunrise-ocean.jpg");
+  background-size: cover;
+  background-position: bottom;
+  border: 4px solid darkorange;
+}
+
+#sunrise-new-entry-image {
+  background-image: url("images/sunrise-with-person.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid darkorange;
+}
+
+#sea-blue-vault-image {
+  background-image: url("images/peaceful.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid darkblue;
+}
+
+#sea-blue-new-entry-image {
+  background-image: url("images/sea.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid darkblue;
+}
+.forest-green-input-and-label-container,
+.sunrise-input-and-label-container,
+.sea-blue-input-and-label-container {
+  height: 30px;
+  width: 35%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+.forest-green-input-and-label-container label,
+.sunrise-input-and-label-container label,
+.sea-blue-input-and-label-container label {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+.forest-green-input-and-label-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: darkgreen;
+}
+
+.sunrise-input-and-label-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: darkorange;
+}
+.sea-blue-input-and-label-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: darkblue;
+}
+
+.forest-green-input-and-label-container input:hover,
+.sunrise-input-and-label-container input:hover,
+.sea-blue-input-and-label-container input:hover {
+  cursor: pointer;
+}
+
+.chosen-theme-style {
+  transform: scale(1.02);
+  box-shadow: -5px 5px 10px grey;
+}
+
+/* footer */
+.footer-vault-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--footer-height);
+  background-color: var(--footer-background-color);
+  padding-left: var(--footer-padding-left);
+  padding-right: var(--footer-padding-right);
+}
+
+.footer-vault-container p {
+  color: var(--dark-text-color);
+}
+.footer-vault-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+  gap: 20px;
+}
+
+.footer-vault-nav a {
+  text-decoration: none;
+  font-size: var(--footer-nav-a-font-size);
+  color: var(--dark-text-color);
+}
+
+.footer-vault-nav a:hover {
+  cursor: pointer;
+  border-bottom: var(--footer-nav-a-border-hover);
+}

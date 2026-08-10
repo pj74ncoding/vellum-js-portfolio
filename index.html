@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="index-grid-layout.css" />
     <title>Home</title>
   </head>
-  <body>
-  <!-- <body data-theme="dark"> -->
+  <body class="body-element">
     <nav class="new-entry-nav">
       <a class="home-page-link" href="index.html"
         ><h2 class="title">The Digital Vellum</h2></a
@@ -41,12 +40,29 @@
         <div class="logged-in-paragraph-container">
           <p id="logged-in" style="font-size: 15px"></p>
         </div>
+        <!-- audio -->
+        <div class="index-sound-icon-container">
+          <audio id="myAudio" loop>
+            <source
+              type="audio/mpeg"
+            />
+          </audio>
+          <i
+            id="index-sound-on-icon"
+            class="fa-solid fa-volume-high sound-on-icon"
+          ></i>
+          <i
+            id="index-sound-off-icon"
+            class="fa-solid fa-volume-off sound-off-icon"
+          ></i>
+        </div>
       </div>
       <!-- profile menu -->
+
       <div class="profile-menu profile-menu-displayed">
         <button id="log-in-button" class="sign-in">Sign In</button>
-
         <button id="log-out-button" class="sign-out">Sign Out</button>
+        <a href="settings.html"><button class="settings">Settings</button></a>
       </div>
     </nav>
 
@@ -184,7 +200,8 @@
         </nav>
       </div>
     </footer>
-    <!-- <br /><br /> -->
+
     <script src="index.js"></script>
+    <script src="settings-local-storage.js"></script>
   </body>
 </html>

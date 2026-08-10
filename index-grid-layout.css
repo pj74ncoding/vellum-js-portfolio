@@ -128,7 +128,7 @@
 .card-section-one > div:nth-of-type(1) {
   grid-column: 1 / span 3;
   background-color: var(--background-color-one);
-  box-shadow: 0 4px 12px #888888;
+  box-shadow: -4px 4px 20px #888888;
   font-size: large;
 }
 
@@ -136,6 +136,9 @@
   -webkit-line-clamp: 4;
 }
 
+.card-section-one > div:nth-of-type(1) > div > p {
+  font-size: medium;
+}
 /* card section two -------------------------------------- */
 /* ======================================================= */
 .card-section-two {
@@ -158,7 +161,7 @@
 .card-section-two > div:nth-of-type(1) {
   grid-column: 1 / span 2;
   background-color: var(--background-color-one);
-  box-shadow: 0 4px 12px #888888;
+  box-shadow: -4px 4px 20px #888888;
   font-size: large;
 }
 
@@ -169,13 +172,16 @@
 
 .card-section-two > div:nth-of-type(3) {
   grid-column: 1 / span 3;
-  background-color: var(--background-color-two);
+  background-color: var(--background-color-three);
 }
 
 .card-section-two > div:nth-of-type(1) > div {
   -webkit-line-clamp: 4;
 }
 
+.card-section-two > div:nth-of-type(1) > div > p {
+  font-size: medium;
+}
 .card-section-two > div:nth-of-type(2) > h2 {
   font-size: large;
 }
@@ -183,11 +189,15 @@
   font-size: small;
 }
 
-.card-section-two > div:nth-of-type(3) > h2 {
-  font-size: large;
+.card-section-two > div:nth-of-type(3) > div {
+  -webkit-line-clamp: 4;
 }
-.card-section-two > div:nth-of-type(3) > p {
-  font-size: small;
+.card-section-two > div:nth-of-type(3) > h2 {
+  font-size: larger;
+}
+
+.card-section-two > div:nth-of-type(3) div > p {
+  font-size: medium;
 }
 
 /* card section three ---------------------------------------*/
@@ -212,7 +222,7 @@
 .card-section-three > div:nth-of-type(1) {
   grid-column: 1 / span 2;
   background-color: var(--background-color-one);
-  box-shadow: 0 4px 12px #888888;
+  box-shadow: -4px 4px 20px #888888;
   font-size: large;
 }
 
@@ -233,7 +243,7 @@
 
 .card-section-three > div:nth-of-type(5) {
   grid-column: 1 / span 3;
-  background-color: var(--background-color-one);
+  background-color: var(--background-color-three);
 }
 
 .card-section-three > div:nth-of-type(1) > div {

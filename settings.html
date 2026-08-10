@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="settings.css" />
+    <link rel="stylesheet" href="root-for-var.css" />
+    <script
+      src="https://kit.fontawesome.com/6644687a4d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="body-element">
+    <nav class="new-entry-nav">
+      <a class="home-page-link" href="index.html"
+        ><h2 class="title">The Digital Vellum</h2></a
+      >
+
+      <div class="button-and-icon-container">
+        <a href="vault.html" class="my-vault-link"> My Vault</a>
+        <p class="vault-page">Settings</p>
+        <a class="new-entry-link" href="newentry.html"
+          ><button class="new-entry-button">New Entry</button></a
+        >
+        <div id="vault-profile-container" class="profile-icon-container">
+          <div class="new-entry-profile-icon-div">
+            <i
+              id="vault-profile-icon"
+              class="fa-solid fa-circle-user fa-xl profile-icon"
+            ></i>
+          </div>
+        </div>
+        &nbsp;
+        <div class="logged-in-paragraph-container">
+          <p id="vault-logged-in"></p>
+        </div>
+      </div>
+
+      <!-- profile menu -->
+      <div class="settings-profile-menu profile-menu-displayed">
+        <button id="vault-log-in-button" class="sign-in">Sign In</button>
+        <button id="vault-log-out-button" class="sign-out">Sign Out</button>
+      </div>
+    </nav>
+
+    <!-- password input-section -->
+
+    <section
+      id="vault-login-section"
+      class="password-input-section-absolute not-displayed"
+    >
+      <form class="password-form" action="">
+        <h3>Please Enter Your Login Details!!</h3>
+        <div class="password-form-label-and-input-container">
+          <label for="username">Username: </label>
+          <input
+            id="vault-username"
+            type="text"
+            name="username"
+            placeholder="username"
+          />
+          <p>( leicester )</p>
+        </div>
+        <div class="password-form-label-and-input-container">
+          <label for="password">Password: </label>
+          <input
+            id="vault-password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+          <p>( filbert16 )</p>
+        </div>
+
+        <button
+          id="vault-login-confirm-button"
+          class="vault-login-confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+        <p
+          id="vault-login-error-message"
+          class="login-error-message vault-is-displayed"
+        >
+          Your Login Details Do Not Match!!!!
+        </p>
+      </form>
+      <br />
+      <div class="password-form-close-button-container">
+        <button
+          id="vault-login-close-button"
+          class="vault-login-close-button"
+          onclick="closeLogin()"
+        >
+          X Close
+        </button>
+      </div>
+    </section>
+    <section
+      class="main-body-section main-body-section-not-displayed"
+      id="main-body-section"
+    >
+      <!-- left-section -->
+      <div class="left-section"></div>
+      <main class="main-section-container">
+        <!-- header -->
+
+        <header class="settings-header-container">
+          <div class="vault-header">
+            <div class="vault-header-and-button-container">
+              <h1 class="settings-h1">Settings</h1>
+            </div>
+            <div class="settings-header-paragraph">
+              <p>Select your theme as the backdrop for your reflections!!!</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- error message -->
+        <div class="theme-error-message-container">
+          <p
+            class="theme-error-message error-is-hidden"
+            id="theme-error-message"
+          >
+            Please select a theme!!
+          </p>
+        </div>
+        <br />
+        <!-- theme card section -->
+
+        <section class="theme-card-section-container" id="theme-card-section">
+          <div class="settings-header-and-button-container">
+            <div class="theme-heading-and-paragraph-container">
+              <h3>Your theme is:</h3>
+              <p id="chosen-theme-h3"></p>
+            </div>
+            <button
+              type="button"
+              id="change-theme-button"
+              class="change-theme-button"
+              onclick="changeColorTheme()"
+            >
+              Select theme
+            </button>
+          </div>
+
+          <br />
+          <form action="" id="theme-card-section-form">
+            <audio id="myAudio" loop>
+              <source
+                type="audio/mpeg"
+              />
+            </audio>
+            <div class="forest-green-card-main-container">
+              <div class="forest-green-card">
+                <div class="image-main-container">
+                  <div
+                    class="image-container"
+                    id="forest-green-vault-image"
+                  ></div>
+                  <div
+                    class="image-container"
+                    id="forest-green-new-entry-image"
+                  ></div>
+                </div>
+
+                <div class="forest-green-input-and-label-container">
+                  <label for="forest-green">Forest Green</label>
+                  <input
+                    class="forest-green-checkbox"
+                    id="settings-green-checkbox"
+                    type="checkbox"
+                    value="green"
+                    name="forest-green"
+                  />
+                  <div class="settings-sound-icon-container">
+                    <i
+                      id="forest-green-sound-on-icon"
+                      class="fa-solid fa-volume-high sound-on-icon"
+                    ></i>
+                    <i
+                      id="forest-green-sound-off-icon"
+                      class="fa-solid fa-volume-off sound-off-icon"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- --------------------------------------------------------------- -->
+            <div class="sunrise-card-main-container">
+              <div class="sunrise-card">
+                <div class="image-main-container">
+                  <div class="image-container" id="sunrise-vault-image"></div>
+                  <div
+                    class="image-container"
+                    id="sunrise-new-entry-image"
+                  ></div>
+                </div>
+
+                <div class="sunrise-input-and-label-container">
+                  <label for="sunrise">Sunrise</label>
+                  <input
+                    class="sunrise-checkbox"
+                    id="settings-green-checkbox"
+                    type="checkbox"
+                    value="green"
+                    name="sunrise"
+                  />
+                  <div class="settings-sound-icon-container">
+                    <i
+                      id="sunrise-sound-on-icon"
+                      class="fa-solid fa-volume-high sound-on-icon"
+                    ></i>
+                    <i
+                      id="sunrise-sound-off-icon"
+                      class="fa-solid fa-volume-off sound-off-icon"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- --------------------------------------------- -->
+            <div class="sea-blue-card-main-container">
+              <div class="sea-blue-card">
+                <div class="image-main-container">
+                  <div class="image-container" id="sea-blue-vault-image"></div>
+                  <div
+                    class="image-container"
+                    id="sea-blue-new-entry-image"
+                  ></div>
+                </div>
+                <div class="sea-blue-input-and-label-container">
+                  <label for="sea-blue">Sea Blue</label>
+                  <input
+                    class="sea-blue-checkbox"
+                    id="settings-blue-checkbox"
+                    type="checkbox"
+                    value="blue"
+                    name="sea-blue"
+                  />
+                  <div class="settings-sound-icon-container">
+                    <i
+                      id="sea-blue-sound-on-icon"
+                      class="fa-solid fa-volume-high sound-on-icon"
+                    ></i>
+                    <i
+                      id="sea-blue-sound-off-icon"
+                      class="fa-solid fa-volume-off sound-off-icon"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+      <div class="right-section"></div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="footer-vault-container">
+        <p>&copy; 2026 The Digital Vellum. Designed for reflection.</p>
+        <nav class="footer-vault-nav">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Archive</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="settings.js"></script>
+    <script src="settings-local-storage.js"></script>
+  </body>
+</html>

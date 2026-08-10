@@ -15,18 +15,20 @@
 
     <title>Vault</title>
   </head>
-  <body>
+
+  <body class="body-element">
     <nav class="new-entry-nav">
       <a class="home-page-link" href="index.html"
         ><h2 class="title">The Digital Vellum</h2></a
       >
-      <div class="page-container">
+      <!-- <div class="page-container">
         <a href="#">Journal</a>
         <a href="#" class="vault-page">My Vault</a>
         <a href="#">Collection</a>
         <a href="#">Settings</a>
-      </div>
+      </div> -->
       <div class="button-and-icon-container">
+        <p class="vault-page">My Vault</p>
         <a class="new-entry-link" href="newentry.html"
           ><button class="new-entry-button">New Entry</button></a
         >
@@ -42,15 +44,28 @@
         <div class="logged-in-paragraph-container">
           <p id="vault-logged-in"></p>
         </div>
+
+        <!-- audio -->
+        <div class="vault-sound-icon-container">
+          <audio id="myAudio" loop>
+            <source type="audio/mpeg" />
+          </audio>
+          <i
+            id="vault-sound-on-icon"
+            class="fa-solid fa-volume-high sound-on-icon"
+          ></i>
+          <i
+            id="vault-sound-off-icon"
+            class="fa-solid fa-volume-off sound-off-icon"
+          ></i>
+        </div>
       </div>
+
       <!-- profile menu -->
       <div class="profile-menu profile-menu-displayed">
-        <div class="log-in-div">
-          <button id="vault-log-in-button" class="sign-in">Sign In</button>
-        </div>
-        <div class="log-out-div">
-          <button id="vault-log-out-button" class="sign-out">Sign Out</button>
-        </div>
+        <button id="vault-log-in-button" class="sign-in">Sign In</button>
+        <button id="vault-log-out-button" class="sign-out">Sign Out</button>
+        <a href="settings.html"><button class="settings">Settings</button></a>
       </div>
     </nav>
 
@@ -198,7 +213,8 @@
         </nav>
       </div>
     </footer>
-    <!-- <br /><br /> -->
+
     <script src="vault.js"></script>
+    <script src="settings-local-storage.js"></script>
   </body>
 </html>
