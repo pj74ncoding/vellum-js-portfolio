@@ -11,8 +11,6 @@ if (localStorage.getItem("vellum-entries") != null) {
 console.log("homeCardArray", homeCardArry);
 button.addEventListener("click", () => {
   const titleInput = title.value.trim();
-  // const titleInput = " " + title.value;
-  // const reflectionInput = " " + reflection.value;
   const reflectionInput = reflection.value.trim();
 
 
