@@ -50,12 +50,13 @@ What problem does this application solve?
 - Sound Effect On and Off Functionality On Every Page
 - Switch Between Public And Private On Every Page With The Click Of A Button
 - Add Input Areas For The User To Enter Their Entries
-- Add An Input Area To Create Tags Which Are Displayed With The Entries In The Vault
+- Add An Input Area To Create Tags Which Are Displayed in the entry section and With The Entries In The Vault
 - Added Animation When An Entrie Is Saved
 - Filter Entries Between Public And Pivate
 - Add A Vault Page To Didplay All The Entries
 - Add The Option To Expand And Shrink An Entry Dsplayed In The Vault If The Content Was To Big.
-- Add A Grid Layout On The Home Page To Display The 6 Most Recent Entries
+- Add A Grid Layout On The Home Page To Display The 6 most recent entries
+- Added warnings that are displayed if the user makes an error or to confirm an action
 
 ---
 
