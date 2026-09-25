@@ -1,6 +1,6 @@
 # vellum-js-portfolio
 
-Built An Interactive Digital Diary Application Using JavaScript.
+Built an interactive digital diary application using javaScript.
 
 Live Demo: https://vellum-js-portfolio-five.vercel.app/
 
@@ -34,7 +34,9 @@ What problem does this application solve?
 
 ### Learning Outcomes
 
-- How To Do A grid Layout And Hide Text Implementing CSS And Add Sound Effects Using Audio.
+- How to do a grid layout and target each individual section in the grid using CSS
+- How to use CSS to limit text to 3 lines with LineClamp and to hide overflowing text with a WebKit in CSS
+- how to add sound effects using the Audio element and JavaScript
 
 - A Good Way To Test Your Code If Functionality Is Not Working Is To Add Console Logs At Certain Points So You Can Pinpoint Where The Code Breaks.
 
