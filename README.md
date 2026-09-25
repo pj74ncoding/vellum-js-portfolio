@@ -1,6 +1,6 @@
 # vellum-js-portfolio
 
-Built an interactive Digital Diary application using JavaScript.
+Built An Interactive Digital Diary Application Using JavaScript.
 
 Live Demo: https://vellum-js-portfolio-five.vercel.app/
 
@@ -12,10 +12,7 @@ Live Demo: https://vellum-js-portfolio-five.vercel.app/
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
-
-- [API Endpoints](#api-endpoints)
 - [Installation](#installation)
-- [Environment Variables](#environment-variables)
 - [Project Features](#usage)
 - [Screenshots](#screenshots)
 - [Deployment](#deployment)
@@ -167,6 +164,6 @@ GitHub: https://github.com/pj74ncoding
 
 ---
 
-## License ( each project might have a different license)
+## License 
 
 This project is licensed under the MIT License.
