@@ -34,30 +34,28 @@ What problem does this application solve?
 
 ### Learning Outcomes
 
-- How to do a grid layout and target each individual section in the grid using CSS
-- How to use CSS to limit text to 3 lines with LineClamp and to hide overflowing text with a WebKit in CSS
-- how to add sound effects using the Audio element and JavaScript
-
-- A Good Way To Test Your Code If Functionality Is Not Working Is To Add Console Logs At Certain Points So You Can Pinpoint Where The Code Breaks.
-
-- How To Add The Current Date Implementing JavaScript
+- Learnt how to do a grid layout and target each individual section in the grid using CSS
+- Learnt how to use CSS to limit text to 3 lines with LineClamp and to hide overflowing text with a WebKit in CSS
+- Learnt how to add sound effects using the Audio element and JavaScript
+- Learnt a good way to test your code if functionality is not working is to add console logs at certain points so you can pinpoint where the code breaks.
+- Learnt how to add the current date implementing the date method in JavaScript
 
 ## Project Features
 
-- User Authentication For Private Funtionality (Login/Logout)
-- Add And Delete Entries
-- Implemented Local Storage To Save The Entries
-- A Settings Page That Allows The User To Select From 3 Themes Which Include Different Colour, Images And Sound Effect
-- Settings, Sign In And Sign Out Functionality On Every Page
-- Sound Effect On and Off Functionality On Every Page
-- Switch Between Public And Private On Every Page With The Click Of A Button
-- Add Input Areas For The User To Enter Their Entries
-- Add An Input Area To Create Tags Which Are Displayed in the entry section and With The Entries In The Vault
-- Added Animation When An Entrie Is Saved
-- Filter Entries Between Public And Pivate
-- Add A Vault Page To Didplay All The Entries
-- Add The Option To Expand And Shrink An Entry Dsplayed In The Vault If The Content Was To Big.
-- Add A Grid Layout On The Home Page To Display The 6 most recent entries
+- User athentication for private funtionality (Login/Logout)
+- Add and delete entries
+- Implemented local storage to save the entries
+- A Settings page that allows the user to select from 3 themes which include different colour, images and sound effect
+- Settings, Sign In And Sign Out functionality on every page
+- Sound effect on and off functionality on every page
+- Switch between public and private on every page with the click of a button
+- Add input areas for the user to enter their entries
+- Add an input area to create tags which are displayed in the entry section and with the entries in the vault
+- Added animation when an entrie is saved
+- Filter entries between public and private
+- Add a vault page to display all the entries
+- Add the option to expand and shrink an entry displayed in the vault if the content was to big.
+- Add a grid layout on the home page to display the 6 most recent entries
 - Added warnings that are displayed if the user makes an error or to confirm an action
 
 ---
