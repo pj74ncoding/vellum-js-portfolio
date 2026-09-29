@@ -26,11 +26,10 @@ Live Demo: https://vellum-js-portfolio-five.vercel.app/
 
 ### Motivation
 
-Why did you build this project?
+- ITonlinelearning project / Personal project
 
-### Objective
+To build upon the existing project, I added new features to test and improve my JavaScript knowledge
 
-What problem does this application solve?
 
 ### Learning Outcomes
 
