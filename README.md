@@ -26,7 +26,7 @@ Live Demo: https://vellum-js-portfolio-five.vercel.app/
 
 ### Motivation
 
-- ITonlinelearning project / Personal project
+- ITonlinelearning project / personal project
 
 To build upon the existing project, I added new features to test and improve my JavaScript knowledge
 
